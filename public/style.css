@@ -7,12 +7,82 @@ body {
     margin-top: 10px;
     text-align: center;
 }
+.search-items{
+    float: right;
+}
 .banner{
-   background: linear-gradient(white, transparent 20%), 
+   background: linear-gradient(white, transparent 10%), 
          url(images/skyline-buildings.jpg) no-repeat center;
 }
 
-.footer{
+.side-logo {
+  height:70px; 
+  float:left;
+  background: url(images/cool-house.jpg);
+  background-repeat:no-repeat;
+  width: 80px;
+  margin: 0px;
+  /*margin-top:120px;*/
+  text-align: center;
+  font-size: 10px;
+}
+
+.side-items {
+width: 50px;
+height: 60px;
+text-align: center;
+}
+
+.side-menu:hover, .expanded {
+width:70px;
+overflow:hidden;
+opacity:1;
+
+}
+
+.side-menu {
+/*position:absolute;*/
+/*top:0;*/
+/*bottom:0;*/
+/*height:90%;*/
+/*left:0;*/
+width:35px;
+overflow:hidden;
+transition:width .2s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+/*margin-top: 20px;*/
+float: left;
+}
+
+
+.side-menu li {
+/*position:relative;*/
+/*display:block;*/
+width:50px;
+
+}
+
+.side-menu li>a {
+position:relative;
+color:#8a8a8a;
+font-size: 9px;
+text-decoration:none;
+font-family: 'Strait', sans-serif;
+border-top:1px solid #f2f2f2;
+text-shadow: 1px 1px 1px  #fff; 
+}
+
+a:hover,a:focus {
+border-left:0px solid #F7F7F6;
+}
+
+nav ul, nav li {
+margin:0;
+padding:0;
+text-transform: uppercase;
+}
+
+footer{
     background: url(images/soldering.jpg) no-repeat center;
     /*margin-top: 205px;*/
 }
