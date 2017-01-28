@@ -16,11 +16,12 @@ body {
 }
 
 .side-logo {
-  height:70px; 
+  height:350px; 
   float:left;
-  background: url(images/cool-house.jpg);
+  /*background: url(images/cool-house.jpg);*/
   background-repeat:no-repeat;
-  width: 80px;
+  width: 10px;
+  background-color: white;
   margin: 0px;
   /*margin-top:120px;*/
   text-align: center;
@@ -30,14 +31,14 @@ body {
 .side-items {
 /*width: 50px;*/
 /*height: 60px;*/
-text-align: center;
+ text-align: center;
 }
 
 .side-menu:hover, .expanded {
 width:70px;
 overflow:hidden;
 opacity:1;
-
+ 
 }
 
 .side-menu 
