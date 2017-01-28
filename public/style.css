@@ -28,8 +28,8 @@ body {
 }
 
 .side-items {
-width: 50px;
-height: 60px;
+/*width: 50px;*/
+/*height: 60px;*/
 text-align: center;
 }
 
@@ -40,7 +40,8 @@ opacity:1;
 
 }
 
-.side-menu {
+.side-menu 
+{
 /*position:absolute;*/
 /*top:0;*/
 /*bottom:0;*/
@@ -58,13 +59,13 @@ float: left;
 .side-menu li {
 /*position:relative;*/
 /*display:block;*/
-width:50px;
+/*width:50px;*/
 
 }
 
 .side-menu li>a {
-position:relative;
-color:#8a8a8a;
+/*position:relative;*/
+color: #8a8a8a;
 font-size: 9px;
 text-decoration:none;
 font-family: 'Strait', sans-serif;
