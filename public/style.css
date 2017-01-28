@@ -1,8 +1,19 @@
 body {
-    font-size: 30px;
+    font-size: 15px;
+    background-color: #212E20;
 }
 
 .search-section {
     margin-top: 10px;
     text-align: center;
 }
+.banner{
+   background: linear-gradient(white, transparent 20%), 
+         url(images/skyline-buildings.jpg) no-repeat center;
+}
+
+.footer{
+    background: url(images/soldering.jpg) no-repeat center;
+    /*margin-top: 205px;*/
+}
+
