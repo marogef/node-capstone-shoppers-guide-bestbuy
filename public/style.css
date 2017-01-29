@@ -23,7 +23,7 @@ body {
 }
 
 .side-logo {
-  height:350px; 
+  height:850px; 
   float:left;
   /*background: url(images/cool-house.jpg);*/
   background-repeat:no-repeat;
@@ -93,11 +93,12 @@ text-transform: uppercase;
 
 
 
-form {
-	/*margin-bottom: 60px;*/
-}
-
 /* Form Fields -------------------- */
+.form-login{
+    width: 40%;
+    margin-left: 370px;
+    color: orange;
+}
 
 .container input,
 textarea {
@@ -150,15 +151,8 @@ textarea {
     font-weight: 400;
     color: red;
 }
-
-
-/*footer{*/
-
-
-/*    background: url(images/soldering.jpg) no-repeat center;*/
-
-
-/*margin-top: 205px;*/
-
-
-/*}*/
+.inside-footer{
+    height:5px;
+    background-color: orange;
+    margin-top: 5px;
+}
