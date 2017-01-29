@@ -1,14 +1,20 @@
 body {
     font-size: 15px;
     background-color: #212E20;
+    font-family: 'Nunito', sans-serif;
 }
-
+.search{
+    margin: auto;
+    width: 150px;
+    height:30px;
+}
 .search-section {
-    margin-top: 10px;
-    text-align: center;
+    /*margin-top: 10px;*/
+    /*text-align: center;*/
+    
 }
 .search-items{
-    float: right;
+
 }
 .banner{
    background: linear-gradient(white, transparent 10%), 
@@ -58,9 +64,9 @@ float: left;
 
 
 .side-menu li {
-/*position:relative;*/
-/*display:block;*/
-/*width:50px;*/
+position:relative;
+display:block;
+width:50px;
 
 }
 
@@ -84,8 +90,73 @@ padding:0;
 text-transform: uppercase;
 }
 
-footer{
-    background: url(images/soldering.jpg) no-repeat center;
-    /*margin-top: 205px;*/
+
+
+form {
+	/*margin-bottom: 60px;*/
 }
+
+/* Form Fields -------------------- */
+
+input,
+textarea {
+  font-size: 1em;
+  color: black;
+  font-weight: 300; 
+  width: 20%;
+  border: none;
+  height: auto;
+  padding: 15px;
+  outline: 0;
+  margin-bottom: 1.2em;
+  border-radius: .3em;
+  border-bottom: 3px solid rgba(0,0,0, 0.05);
+  background-color: #e8eeef;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+.form-contact{
+	padding: 20px 24px;
+	background: #f4f7f8;
+}
+.container{
+    width: 55%;
+    length: 30%;
+    margin: auto;
+    height: 30%;
+    margin-top: 350px;
+    color: orange;
+}
+input[type="text"]
+{
+	background: #fdfee6;
+}
+
+a[target="_blank"]{
+	color: #39aad1;
+	text-decoration: none;
+	border-bottom: 1px dotted;
+}
+.br {
+	border-radius: .5em;
+}
+.avatar {
+	display: block;
+	margin: 0 auto 2em;
+}
+.rounded {
+	/*border-radius: 50%;*/
+}
+.btn {
+	cursor: pointer;
+	font-size: .875em;
+	font-weight: 400;
+	color: red;
+}
+
+
+
+/*footer{*/
+/*    background: url(images/soldering.jpg) no-repeat center;*/
+    /*margin-top: 205px;*/
+/*}*/
 
