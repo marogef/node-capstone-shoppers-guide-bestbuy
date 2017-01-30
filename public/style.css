@@ -1,100 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
 body {
     font-size: 15px;
     background-color: #212E20;
     font-family: 'Nunito', sans-serif;
 }
-.search{
+
+.search {
     margin: auto;
     width: 150px;
-    height:30px;
+    height: 30px;
 }
+
 .search-section {
     /*margin-top: 10px;*/
     /*text-align: center;*/
-    
-}
-.search-items{
-
-}
-.banner{
-   background: linear-gradient(white, transparent 10%), 
-         url(images/skyline-buildings.jpg) no-repeat center;
-         height: 100px;
 }
 
-.side-logo {
-  height:879px; 
-  float:left;
-  /*background: url(images/cool-house.jpg);*/
-  background-repeat:no-repeat;
-  width: 10px;
-  background-color: white;
-  margin: 0px;
-  /*margin-top:120px;*/
-  text-align: center;
-  font-size: 10px;
+.search-items {}
+
+.banner {
+    background: linear-gradient(white, transparent 10%), url(images/skyline-buildings.jpg) no-repeat center;
+    height: 100px;
+    text-align: center;
+}
+.banner h1 {
+    padding-top: 79px;
+    color: white;
 }
 
-.side-items {
-/*width: 50px;*/
-/*height: 60px;*/
- text-align: center;
+.side-menu {
+    border: 1px solid gray;
+    position: absolute;
+    top: 103px;
+    left: -135px;
+    width: auto;
+    transition: width .2s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    /*margin-top: 20px;*/
+    float: left;
+}
+.side-menu:hover{
+    left: 0px;
 }
 
-.side-menu:hover, .expanded {
-width:70px;
-overflow:hidden;
-opacity:1;
- 
+.side-menu .side-logo {
+    float: right;
+    position: absolute;
+    right: -80px;
+    top: 30px;
+    /*background: url(images/cool-house.jpg);*/
+    background-repeat: no-repeat;
+    width: auto;
+    background-color: white;
+    margin: 0px;
+    /*margin-top:120px;*/
+    text-align: center;
+    font-size: 15px;
+    padding: 0.4rem;
+    transform: rotate(90deg);
+	transform-origin: left top 0;
+	
+}
+.side-menu .side-logo a {
+    text-decoration: none;
 }
 
-.side-menu 
-{
-/*position:absolute;*/
-/*top:0;*/
-/*bottom:0;*/
-/*height:90%;*/
-/*left:0;*/
-width:35px;
-overflow:hidden;
-transition:width .2s linear;
--webkit-transform:translateZ(0) scale(1,1);
-/*margin-top: 20px;*/
-float: left;
+.side-menu .scrollbar ul {
+    list-style-type: square;
+    /*list-style-image: url('sqpurple.gif');*/
+}
+
+.side-menu .scrollbar li {
+    display: block;
+    width: auto;
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.side-menu .scrollbar li>a {
+    /*position:relative;*/
+    color: #8a8a8a;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Strait', sans-serif;
+    text-shadow: 1px 1px 1px #fff;
 }
 
 
-.side-menu li {
-position:relative;
-display:block;
-width:50px;
-
+a:hover,
+a:focus {
+    border-left: 0px solid #F7F7F6;
 }
 
-.side-menu li>a {
-/*position:relative;*/
-color: #8a8a8a;
-font-size: 9px;
-text-decoration:none;
-font-family: 'Strait', sans-serif;
-border-top:1px solid #f2f2f2;
-text-shadow: 1px 1px 1px  #fff; 
+nav ul,
+nav li {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
 }
-
-a:hover,a:focus {
-border-left:0px solid #F7F7F6;
-}
-
-nav ul, nav li {
-margin:0;
-padding:0;
-text-transform: uppercase;
-}
-
 
 
 /* Form Fields -------------------- */
-.form-login{
+
+.form-login {
     width: 40%;
     margin-left: 370px;
     color: orange;
@@ -116,6 +141,7 @@ textarea {
     background-color: #e8eeef;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
 }
+
 .container .form-contact {
     padding: 20px 24px;
     background: #f4f7f8;
@@ -140,7 +166,6 @@ textarea {
     border-bottom: 1px dotted;
 }
 
-
 .container .br {
     border-radius: .5em;
 }
@@ -151,8 +176,9 @@ textarea {
     font-weight: 400;
     color: red;
 }
-.inside-footer{
-    height:5px;
+
+.inside-footer {
+    height: 5px;
     background-color: orange;
     margin-top: 5px;
 }

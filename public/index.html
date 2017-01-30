@@ -1,115 +1,94 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-        <meta name="viewport" content="width=device-width">
-        
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta name="viewport" content="width=device-width">
+
 </head>
 
 <body>
-    <section class="banner">
-        <section class="inside">
-            <section class="features">
-                <h1>The shopping trip starts at a consumer electronics retailer now, nowhere else.</h1>
-            </section>
-        </section>
-
-    </section>
+    <header class="banner">
+        <h1>The shopping trip starts at a consumer electronics retailer now, nowhere else.</h1>
+    </header>
 
     <!--Add the side navigation-->
-   
-        <section class="side-menu">
-            <section>
-                <a class="logo" href="http://Bestbuy.com">
-                </a>
+
+    <section class="side-menu">
+        <section class="scrollbar">
+            <ul>
+                <li>
+                    <a href="https://www.overstock.com/Electronics/2/store.html">overstock items</a>
+                </li>
+                <li>
+                    <a href="https://www.techbargains.com/category/351/electronics">Bargains</a>
+                </li>
+                <li>
+                    <a href="http://www.whatdigitalcamera.com/buying-advice/best-camera-deals-on-the-market-63270">Camera report</a>
+                </li>
+                <li>
+                    <a href="http://www.laptopmag.com/t/laptops" >Laptop advice </a>
+                </li>
+            </ul>
+        </section>
+        <section class="side-logo">
+            <a class="logo" href="http://Bestbuy.com">Menu </a>
+        </section>
+    </section>
+
+    <section class="content">
+        <section class="form-login">
+            <p>Please sign up and we will send you more information</p>
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <input class="btn default" type="submit" value="Login">
+            <a href="#" target="_blank">Forgot your password?</a>
+        </section>
+
+        <section class="search">
+            <section class="search-items">
+                <input id="search-section" type="text" placeholder="Search for your items">
+                <input type="submit" value="Search">
             </section>
-            <section class="side-logo"></section>
-            <section class="scrollbar">
+
+            <section class="results">
                 <ul>
-                    <li>
-                        <a href="https://www.overstock.com/Electronics/2/store.html">
-                            <section class="side-items"></section>
-                            <span class="nav-text">overstock items</span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.techbargains.com/category/351/electronics">
-                            <section class="side-items"></section>
-                            <span class="nav-text">Bargains</span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.whatdigitalcamera.com/buying-advice/best-camera-deals-on-the-market-63270">
-                            <section class="side-items"></section>
-                            <span class="nav-text">Camera report</span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.laptopmag.com/t/laptops">
-                            <section class="side-items"></section>
-                            <span class="nav-text">Laptop advice</span>
-                        </a>
-                    </li>
+
                 </ul>
             </section>
         </section>
-    
-<section class="content">
-		<section class="form-login">
-		    <p>Please sign up and we will send you more information</p>
-			<label for="username">Username:</label> 
-			<input type="text" id="username">
 
-			<label for="password">Password:</label>
-			<input type="password" id="password">
-			<input class="btn default" type="submit" value="Login">
-            <a href="#" target="_blank">Forgot your password?</a> 
-		</section>
 
-    <section class="search">
-        <section class="search-items">
-            <input id="search-section" type="text" placeholder="Search for your items">
-            <input type="submit" value="Search">
+
+        <section class="container">
+            <form class="form-contact br">
+                <h1>Contact</h1>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="email@website.com">
+
+                <label for="msg">Message:</label>
+                <textarea id="msg" rows="7"></textarea>
+                <input class="btn inln default" type="submit" value="Submit">
+                <input class="btn inln error" type="reset" value="Reset">
+            </form>
         </section>
 
-        <section class="results">
-            <ul>
-                
-            </ul>
-        </section>
+
+        <footer>
+            <section class="inside-footer">
+
+            </section>
+        </footer>
     </section>
-
-
-
-	<section class="container">
-		<form class="form-contact br">
-	  	  <h1>Contact</h1>
-
-		  <label for="name">Name:</label> 
-		  <input type="text" id="name">
-
-     	  <label for="email">Email:</label>
-        	<input type="email" id="email" placeholder="email@website.com">
-  
-     	  <label for="msg">Message:</label>
-     	  <textarea id="msg" rows="7"></textarea>
- 		     <input class="btn inln default" type="submit" value="Submit">
- 		    <input class="btn inln error" type="reset" value="Reset"> 
-		</form>
-	</section>
-
-
-    <footer>
-        <section class="inside-footer">
-
-        </section>
-    </footer>
-</section>
 
     <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="client.js"></script>
@@ -117,7 +96,7 @@
     <script src="public/clamp.js"></script>
     <script src="public/client.js"></script>
     <script type=text/javascript>
-        $(window).load(function () {
+        $(window).load(function() {
             $(".loader").fadeOut("slow");
         })
     </script>
