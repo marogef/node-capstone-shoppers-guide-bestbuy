@@ -77,8 +77,10 @@
             <input type="submit" value="Search">
         </section>
 
-        <section id="results-section">
-            <ul></ul>
+        <section class="results">
+            <ul>
+                
+            </ul>
         </section>
     </section>
 
@@ -99,7 +101,6 @@
  		     <input class="btn inln default" type="submit" value="Submit">
  		    <input class="btn inln error" type="reset" value="Reset"> 
 		</form>
-		
 	</section>
 
 
@@ -113,6 +114,13 @@
     <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="client.js"></script>
 
+    <script src="public/clamp.js"></script>
+    <script src="public/client.js"></script>
+    <script type=text/javascript>
+        $(window).load(function () {
+            $(".loader").fadeOut("slow");
+        })
+    </script>
 </body>
 
 </html>
