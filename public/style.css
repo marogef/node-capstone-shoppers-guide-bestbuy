@@ -56,6 +56,7 @@ body {
     /*margin-top: 20px;*/
     float: left;
 }
+
 .side-menu:hover{
     left: 0px;
 }
@@ -81,7 +82,9 @@ body {
 .side-menu .side-logo a {
     text-decoration: none;
 }
-
+.side-menu .scrollbar .menu-img{
+    background-image: url('images/cool-house.jpg'); 
+}
 .side-menu .scrollbar ul {
     list-style-type: square;
     /*list-style-image: url('sqpurple.gif');*/
@@ -130,12 +133,12 @@ textarea {
     font-size: 1em;
     color: black;
     font-weight: 300;
-    width: 20%;
+    /*width: 20%;*/
     border: none;
     height: auto;
-    padding: 15px;
+    padding: -1px;
     outline: 0;
-    margin-bottom: 1.2em;
+    margin-bottom: 0.2em;
     border-radius: .3em;
     border-bottom: 3px solid rgba(0, 0, 0, 0.05);
     background-color: #e8eeef;
@@ -148,11 +151,9 @@ textarea {
 }
 
 .container {
-    width: 55%;
-    length: 30%;
+    width: 30%;
     margin: auto;
-    height: 30%;
-    margin-top: 350px;
+     margin-top: 553px; 
     color: orange;
 }
 
@@ -172,7 +173,7 @@ textarea {
 
 .container .btn {
     cursor: pointer;
-    font-size: .875em;
+    font-size: -0.125em;
     font-weight: 400;
     color: red;
 }
