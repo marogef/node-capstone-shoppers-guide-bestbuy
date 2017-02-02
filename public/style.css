@@ -198,3 +198,11 @@ textarea {
     margin-top: 515px;
     
 }
+.reset-password{
+   margin-left: 360px;
+   margin-top: 10px;
+}
+.reset-password p{
+      color: orange;
+      margin-bottom: 5px;
+}
