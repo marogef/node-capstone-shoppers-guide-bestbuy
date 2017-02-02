@@ -176,6 +176,16 @@ textarea {
     font-weight: 400;
     color: red;
 }
+.signup input {
+
+	margin-top:30px;
+	display:block
+}
+.signup fieldset{
+    padding-left: 150px;
+ 	margin-left: 100px;
+	padding-bottom: 50px;
+}
 
 .inside-footer {
     height: 5px;
