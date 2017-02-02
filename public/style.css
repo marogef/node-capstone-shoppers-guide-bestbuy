@@ -33,7 +33,9 @@ body {
     /*text-align: center;*/
 }
 
-.search-items {}
+.search-items {
+    margin-top: 5px;
+}
 
 .banner {
     background: linear-gradient(white, transparent 10%), url(images/skyline-buildings.jpg) no-repeat center;
@@ -177,7 +179,6 @@ textarea {
     color: red;
 }
 .signup input {
-
 	margin-top:30px;
 	display:block
 }
