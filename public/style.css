@@ -42,6 +42,7 @@ body {
     height: 100px;
     text-align: center;
 }
+
 .banner h1 {
     padding-top: 79px;
     color: white;
@@ -59,7 +60,7 @@ body {
     float: left;
 }
 
-.side-menu:hover{
+.side-menu:hover {
     left: 0px;
 }
 
@@ -78,14 +79,15 @@ body {
     font-size: 15px;
     padding: 0.4rem;
     transform: rotate(90deg);
-	transform-origin: left top 0;
-	
+    transform-origin: left top 0;
 }
+
 .side-menu .side-logo a {
     text-decoration: none;
 }
-.side-menu .scrollbar .menu-img{
-}
+
+.side-menu .scrollbar .menu-img {}
+
 .side-menu .scrollbar ul {
     list-style-type: square;
     /*list-style-image: url('sqpurple.gif');*/
@@ -107,7 +109,6 @@ body {
     text-shadow: 1px 1px 1px #fff;
 }
 
-
 a:hover,
 a:focus {
     border-left: 0px solid #F7F7F6;
@@ -122,11 +123,19 @@ nav li {
 
 
 /* Form Fields -------------------- */
-
+input, button {
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 0.2rem;
+}
 .form-login {
-    width: 21%;
-    margin-left: 950px;
     color: orange;
+    float: right;
+    margin-top: 0.5rem;
+}
+.form-login input{
+    
 }
 
 .container input,
@@ -154,7 +163,7 @@ textarea {
 .container {
     width: 30%;
     margin: auto;
-     margin-top: 553px; 
+    margin-top: 553px;
     color: orange;
 }
 
@@ -178,14 +187,121 @@ textarea {
     font-weight: 400;
     color: red;
 }
+
 .signup input {
-	margin-top:30px;
-	display:block
+    margin-top: 30px;
+    display: block
 }
-.signup fieldset{
+
+.signup fieldset {
     padding-left: 150px;
- 	margin-left: 100px;
-	padding-bottom: 50px;
+    margin-left: 100px;
+    padding-bottom: 50px;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.results {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87%;
+    margin-top: 3rem;
+}
+
+.results li {
+    width: 33.3%;
+    vertical-align: top;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    display: inline-block;
+}
+
+.product-container {
+    background-color: #fff;
+    min-height: 22rem;
+    min-width: 100%;
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+    -webkit-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+    -moz-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+    box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+}
+
+.results img {
+    display: block;
+    max-width: 90%;
+    height: 6rem;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 1.25rem auto 1rem auto;
+}
+
+.results .title-wrapper {
+    height: 5rem;
+    display: table;
+    width: 100%;
+    /* forms as a table cell */
+}
+
+.results h3 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.product-details {
+    min-height: 6.5rem;
+}
+
+.add-to-cart {
+    display: block;
+    text-align: center;
+    width: 50%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #333;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #193366;
+    color: #fff;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+    box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+}
+
+.sale-button {
+    background: #F4DE7B;
+    color: #333;
+    border: 1px solid #C2AA3D;
+    font-weight: 600;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.highlight {
+    color: red;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.strong {
+    font-weight: 800;
+}
+
+.no-sale {
+    margin-top: 1.56rem;
 }
 
 .inside-footer {
@@ -193,17 +309,19 @@ textarea {
     background-color: orange;
     margin-top: 5px;
 }
-.inside-form{
+
+.inside-form {
     height: 5px;
     background-color: orange;
     margin-top: 515px;
-    
 }
-.reset-password{
-   margin-left: 360px;
-   margin-top: 10px;
+
+.reset-password {
+    margin-left: 360px;
+    margin-top: 10px;
 }
-.reset-password p{
-      color: orange;
-      margin-bottom: 5px;
+
+.reset-password p {
+    color: orange;
+    margin-bottom: 5px;
 }

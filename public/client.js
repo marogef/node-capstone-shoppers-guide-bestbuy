@@ -1,18 +1,26 @@
-$('#search-section').on('click', getUserQuery);
-$(document).on('keypress', function (key) {
+
+$(document).on('keypress', function(key) {
     //keyCode == 13 is the ENTER key
     if (key.keyCode == 13) {
-        getUserQuery();
+        $('.loader').fadeIn('slow');
+        var userInput = $('#search-section').val();
+        
+        getResults(userInput);
+        // $('#search-section').val('');
     }
 });
 
-function getUserQuery() {
-    $('.loader').fadeIn('slow');
-    getResults($('#search-section').val());
-    $('#search-section').val('');
-}
+$(document).on('click', "#userInput",function(key) {
+     $('.loader').fadeIn('slow');
+        var userInput = $('#search-section').val();
+        getResults(userInput);
+        // $('#search-section').val('');
+});
+
+
 
 function getResults(query) {
+    console.log(query);
     var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
     $.ajax({
         method: 'GET',
@@ -48,14 +56,16 @@ function resultsIntoListItem(output, product) {
         output += '<p class="reg-price strikethrough">$' + product.regularPrice + '</p>';
         output += '<p class="sale-price highlight">Sale: $' + product.salePrice + '</p>';
         isSale = true;
-    } else {
+    }
+    else {
         output += '<p class="reg-price strong no-sale">$' + product.regularPrice + '</p>';
         isSale = false;
     }
     output += '</div>';
     if (isSale == false) {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
-    } else {
+    }
+    else {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart sale-button">Add to Cart</a>';
     }
     output += '</div>';
@@ -76,14 +86,17 @@ function ifResultsFail(jqXHR, error, errorThrown) {
 }
 
 function ajaxDone(result) {
+    console.log(result);
     var output = '';
     if (result.products.length == 0) {
         alert('No Results Found!');
-    } else {
+    }
+    else {
         if (!result.error && result.products) {
             console.log(result.products);
             output = result.products.reduce(resultsIntoListItem, '');
-        } else {
+        }
+        else {
             output = 'Unable to access products (see browser console for more information)';
         }
         $('.results ul').html(output);
