@@ -198,7 +198,21 @@ textarea {
     margin-left: 100px;
     padding-bottom: 50px;
 }
-
+.form-signup{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 178px;
+    color: red;
+}
+.form-signup input{
+    margin-top: 5px;
+    padding: 8px;
+    background-color: #fdfe
+}
+.form-signup button{
+    color: grey;
+}
 ul,
 ol {
     list-style-type: none;

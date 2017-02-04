@@ -5,14 +5,17 @@ var events = require('events');
 var config = require('./config');
 var Product = require('./models/product');
 
-//var node = require("node");
-var http = require('http');
-var mongoose = require('mongoose');
+//mine:
+// var server = http.createServer(router);
+// var io = socketio.listen(server);
 
+// var node = require("node");
+// var http = require('http');
+var mongoose = require('mongoose');
+// const app = express();
 var app = express();
 
-
-//serves static files and uses json bodyparser
+// serves static files and uses json bodyparser
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
@@ -22,7 +25,6 @@ var runServer = function(callback) {
         if (err && callback) {
             return callback(err);
         }
-
         app.listen(config.PORT, function() {
             console.log('Listening on localhost:' + config.PORT);
             if (callback) {
@@ -31,24 +33,19 @@ var runServer = function(callback) {
         });
     });
 };
-
 if (require.main === module) {
     runServer(function(err) {
         if (err) {
             console.error(err);
         }
     });
-};
-
+}
+// ;
 // module.exports =function(query,callback) {
-
 //api call between the server and basketball api   
 var getProducts = function(product_name, args) {
-
     // console.log("inside the getProducts function");
-
     var emitter = new events.EventEmitter();
-
     unirest.post('https://api.bestbuy.com/v1/products((name=' + product_name + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc')
         .qs(args)
         //after api call we get the response inside the "response" parameter
@@ -66,11 +63,8 @@ var getProducts = function(product_name, args) {
         });
     return emitter;
 };
-
 //api call between the view and the controller
 app.get('/product/:product_name', function(request, response, error) {
-
-
     if (request.params.product_name == "") {
         response.json("Specify a product name");
     }
@@ -96,20 +90,15 @@ app.get('/product/:product_name', function(request, response, error) {
             //apiOutput = item;
             //return item;
             response.json(item);
-
-
         });
 
         //error handling
         productDetails.on('error', function(code) {
             //console.log("error line 54");
             response.sendStatus(code);
-
         });
     }
-
 });
-
 app.post('/product', function(req, res) {
     Product.create({
         name: req.body.name
@@ -122,8 +111,6 @@ app.post('/product', function(req, res) {
         res.status(201).json(products);
     });
 });
-
-
 app.listen(process.env.PORT || 8080, function() {
 console.log("Server is running");
 });
