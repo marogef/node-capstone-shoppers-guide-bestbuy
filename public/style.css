@@ -19,10 +19,10 @@
 body {
     font-size: 15px;
     font-family: 'Nunito', sans-serif;
-    background-color: #660000;
+    background-color: #115391;
 }
 .content{
-    background-color: #660000;
+    background-color: #115391;
     background-image: url('./public/images/cool-house.jpg');
 }
 .search {
@@ -41,14 +41,21 @@ body {
 }
 
 .banner {
-    background: linear-gradient(white, transparent 10%), url(images/skyline-buildings.jpg) no-repeat center;
+    background: linear-gradient(white, transparent 10%), url(images/blue-e.jpg) no-repeat center;
     height: 100px;
     text-align: center;
+    background-size: cover;
+     /*background-attachment: fixed;*/
+    background-position: 1px -100px; 
 }
 
 .banner h1 {
     padding-top: 79px;
     color: white;
+}
+.banner img{
+    width:50px;
+    height: 20px;
 }
 
 .side-menu {
@@ -211,7 +218,7 @@ textarea {
     margin-right: auto;
     margin-top: 10px;
     width: 178px;
-    color: red;
+    color: #12F715;
 }
 .form-signup input{
     margin-top: 5px;
@@ -350,12 +357,12 @@ h3 {
     margin-bottom: 5px;
 }
 .mid-content{
-    background-color: #A25B00;
+    background-color: #11A1FF;
     height: 538px;
         background-image: url('/public/images/cool-house.jpg');
 
 }
 .final-content{
-    background-color: #004F00;
+    background-color: #063A5C;
     margin-top: 5380px;
 }
