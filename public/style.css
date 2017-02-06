@@ -60,7 +60,6 @@ body {
     /*margin-top: 10px;*/
     /*text-align: center;*/
 }
-
 .content .search .search-items {
     margin-top: 5px;
 }
@@ -118,7 +117,6 @@ body {
     transform: rotate(90deg);
     transform-origin: left top 0;
 }
-
 .side-menu .side-logo a {
     text-decoration: none;
 }
@@ -247,7 +245,7 @@ textarea {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    width: 178px;
+    width: 160px;
     color: #12F715;
 }
 .form-signup input{
@@ -301,7 +299,6 @@ h3 {
     overflow: hidden;
     vertical-align: middle;
     margin: 1.25rem auto 1rem auto;
-    
 }
 
 .content .results .title-wrapper {
