@@ -41,27 +41,39 @@
     -o-padding-start: 0px;
     -o-padding-end: 0px;
 }
+/*general styles*/
 body {
     font-size: 15px;
     font-family: 'Nunito', sans-serif;
     background-color: #115391;
 }
-.content{
-    background-color: #115391;
-    /*background-image: url('./images/cool-house.jpg');*/
-}
-.content .search {
-    margin: auto;
-    width: 150px;
-    /*height: 30px;*/
+
+a:hover,
+a:focus {
+    border-left: 0px solid #F7F7F6;
 }
 
-#search-section {
-    /*margin-top: 10px;*/
-    /*text-align: center;*/
+nav ul,
+nav li {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
 }
-.content .search .search-items {
-    margin-top: 5px;
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+input, button {
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 0.2rem;
+}
+/*header styles*/
+h3 {
+    font-weight: 600;
 }
 
 .banner {
@@ -82,7 +94,31 @@ body {
     width:50px;
     height: 20px;
 }
+.form-login {
+    color: orange;
+    float: right;
+    margin-top: 0.5rem;
+}
+.form-login input{
+    
+}
+.form-signup{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 160px;
+    color: #12F715;
+}
+.form-signup input{
+    margin-top: 5px;
+    padding: 8px;
+    background-color: #fdf;
+}
+.form-signup button{
+    color: grey;
+}
 
+/*content styles*/
 .side-menu {
     border: 1px solid gray;
     position: absolute;
@@ -144,124 +180,18 @@ body {
     text-shadow: 1px 1px 1px #fff;
 }
 
-a:hover,
-a:focus {
-    border-left: 0px solid #F7F7F6;
+.content{
+    background-color: #115391;
+    /*background-image: url('./images/cool-house.jpg');*/
 }
-
-nav ul,
-nav li {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
+.content .search {
+    margin: auto;
+    width: 150px;
+    /*height: 30px;*/
 }
-
-
-/* Form Fields -------------------- */
-input, button {
-    padding: 0.2rem;
-    border-radius: 5px;
-    border: 1px solid gray;
-    margin-bottom: 0.2rem;
-}
-.form-login {
-    color: orange;
-    float: right;
-    margin-top: 0.5rem;
-}
-.form-login input{
-    
-}
-
-.final-content .container input,
-textarea {
-    font-size: 1em;
-    color: black;
-    font-weight: 300;
-    /*width: 20%;*/
-    border: none;
-    height: auto;
-    padding: -1px;
-    outline: 0;
-    margin-bottom: 0.2em;
-    border-radius: .3em;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
-    background-color: #e8eeef;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-}
-
-.final-content .container .form-contact {
-    padding: 20px 24px;
-    background: #f4f7f8;
-  
-}
-
-.final-content .container {
-    width: 100%;
-    /*margin: auto;*/
-    margin-top: 195px;
-    color: orange;
-
-}
-
-.container input[type="text"] {
-    background: #fdfee6;
-}
-
-.final-content .container a[target="_blank"] {
-    color: #39aad1;
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-
-.final-content .container .br {
-    border-radius: .5em;
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.final-content .container .btn {
-    cursor: pointer;
-    font-size: -0.125em;
-    font-weight: 400;
-    color: red;
-}
-
-.final-content .signup input {
-    margin-top: 30px;
-    display: block
-}
-
-.final-content .signup fieldset {
-    padding-left: 150px;
-    margin-left: 100px;
-    padding-bottom: 50px;
-}
-.form-signup{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    width: 160px;
-    color: #12F715;
-}
-.form-signup input{
+.content .search .search-items {
     margin-top: 5px;
-    padding: 8px;
-    background-color: #fdf;
 }
-.form-signup button{
-    color: grey;
-}
-ul,
-ol {
-    list-style-type: none;
-}
-
-h3 {
-    font-weight: 600;
-}
-
 .content .results {
     margin-left: auto;
     margin-right: auto;
@@ -416,6 +346,71 @@ h3 {
     /*margin-top: 538px;*/
     /*background: url(images/88.jpg) no-repeat center;*/
 }
+
+.final-content .container input,
+textarea {
+    font-size: 1em;
+    color: black;
+    font-weight: 300;
+    /*width: 20%;*/
+    border: none;
+    height: auto;
+    padding: -1px;
+    outline: 0;
+    margin-bottom: 0.2em;
+    border-radius: .3em;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+
+.final-content .container .form-contact {
+    padding: 20px 24px;
+    background: #f4f7f8;
+  
+}
+
+.final-content .container {
+    width: 100%;
+    /*margin: auto;*/
+    margin-top: 195px;
+    color: orange;
+
+}
+.final-content .container a[target="_blank"] {
+    color: #39aad1;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.final-content .container .br {
+    border-radius: .5em;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.final-content .container .btn {
+    cursor: pointer;
+    font-size: -0.125em;
+    font-weight: 400;
+    color: red;
+}
+.final-content .container input[type="text"] {
+    background: #fdfee6;
+}
+
+.final-content .signup input {
+    margin-top: 30px;
+    display: block
+}
+
+.final-content .signup fieldset {
+    padding-left: 150px;
+    margin-left: 100px;
+    padding-bottom: 50px;
+}
+
 footer .inside-footer {
     height: 5px;
     background-color: orange;
