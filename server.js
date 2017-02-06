@@ -16,16 +16,18 @@ var mongoose = require('mongoose');
 var app = express();
 
 // serves static files and uses json bodyparser
-app.use(express.static('public'));
 app.use(bodyParser.json());
+app.use(express.static('public'));
+
 
 /* STEP 2 - creating objects and constructors*/
-var runServer = function(callback) {
-    mongoose.connect(config.DATABASE_URL, function(err) {
+var runServer = function (callback) {
+    mongoose.connect(config.DATABASE_URL, function (err) {
         if (err && callback) {
             return callback(err);
         }
-        app.listen(config.PORT, function() {
+
+        app.listen(config.PORT, function () {
             console.log('Listening on localhost:' + config.PORT);
             if (callback) {
                 callback();
@@ -33,24 +35,24 @@ var runServer = function(callback) {
         });
     });
 };
+
 if (require.main === module) {
-    runServer(function(err) {
+    runServer(function (err) {
         if (err) {
             console.error(err);
         }
     });
-}
+};
 // ;
 // module.exports =function(query,callback) {
 //api call between the server and basketball api   
 var getProducts = function(product_name, args) {
     // console.log("inside the getProducts function");
     var emitter = new events.EventEmitter();
-    unirest.post('https://api.bestbuy.com/v1/products((name=' + product_name + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc')
-        .qs(args)
+//    unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '*))?apiKey=t5reggzup769kevta2bdabkx&format=json&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc')
+    unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=t5reggzup769kevta2bdabkx&format=json')
         //after api call we get the response inside the "response" parameter
         .end(function(response) {
-            console.log(response);
             //success scenario
             if (response.ok) {
                 emitter.emit('end', response.body);
@@ -70,31 +72,16 @@ app.get('/product/:product_name', function(request, response, error) {
     }
     else {
 
-        var productDetails = getProducts(request.params.product_name, {
-            method: 'GET',
-            dataType: 'jsonp',
-            data: {
-                format: 'json',
-                apiKey: 't5reggzup769kevta2bdabkx',
-                page: 1,
-                pageSize: 36
-            },
-            cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
-            preowned: false,
-            active: true
-        });
+        var productDetails = getProducts(request.params.product_name);
 
         //get the data from the first api call
         productDetails.on('end', function(item) {
             //console.log(item);
-            //apiOutput = item;
-            //return item;
             response.json(item);
         });
 
         //error handling
         productDetails.on('error', function(code) {
-            //console.log("error line 54");
             response.sendStatus(code);
         });
     }
@@ -111,6 +98,7 @@ app.post('/product', function(req, res) {
         res.status(201).json(products);
     });
 });
-app.listen(process.env.PORT || 8080, function() {
-console.log("Server is running");
-});
+
+exports.app = app;
+exports.runServer = runServer;
+app.listen(process.env.PORT, process.env.IP);

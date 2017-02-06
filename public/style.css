@@ -197,14 +197,11 @@ textarea {
 }
 
 .final-content .container {
-    width: 30%;
+    width: 100%;
     /*margin: auto;*/
     margin-top: 195px;
     color: orange;
 
-}
-.results{
-    background-color: beige;
 }
 
 .container input[type="text"] {
@@ -219,9 +216,9 @@ textarea {
 
 .final-content .container .br {
     border-radius: .5em;
-    /*width: 600px;*/
-    /*margin-right: auto;*/
-    /*margin-left: auto;*/
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .final-content .container .btn {
@@ -251,7 +248,7 @@ textarea {
 .form-signup input{
     margin-top: 5px;
     padding: 8px;
-    background-color: #fdfe
+    background-color: #fdf;
 }
 .form-signup button{
     color: grey;
@@ -270,17 +267,17 @@ h3 {
     margin-right: auto;
     width: 87%;
     /*margin-top: 3rem;*/
-    background-color:black;
 }
 
 .content .results li {
-    width: 33.3%;
+    width: 49%;
     vertical-align: top;
     padding: 1rem 0.5rem 1rem 0.5rem;
     display: inline-block;
 }
 
-.content .product-container {
+.content .results .product-container {
+    position: relative;
     background-color: #fff;
     min-height: 22rem;
     min-width: 100%;
@@ -290,6 +287,25 @@ h3 {
     -webkit-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
     -moz-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
     box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+}
+
+.content .results .product-container .add-product-to-favorites{ 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.content .results .product-container .add-product-to-favorites button {
+     padding:0; 
+     border-radius: 5px; 
+     border: 0; 
+     margin: 0; 
+}
+.content .results .product-container .add-product-to-favorites img{ 
+    width: 25px;
+    height: auto;
+     padding:0; 
+     margin: 0; 
 }
 
 .content .results img {
@@ -377,11 +393,11 @@ h3 {
 /*    color: orange;*/
 /*    margin-bottom: 5px;*/
 /*}*/
-.mid-content{
-    background-color: #11A1FF;
+.mid-content {
+    background-color: #1153B1;
     height: 640px;
-    background: url(images/flying-gadget.jpg) no-repeat center;
-        /*background-size: 950px 560px;*/
+    /* background: url(images/flying-gadget.jpg) no-repeat center; */
+    /* background-size: 950px 560px; */
     background-size: cover;
 }
 .mid-content p{
@@ -396,9 +412,9 @@ h3 {
     
 }
 .final-content{
-    background-color: #063A5C;
-    margin-top: 538px;
-    background: url(images/88.jpg) no-repeat center;
+    /*background-color: #063A5C;*/
+    /*margin-top: 538px;*/
+    /*background: url(images/88.jpg) no-repeat center;*/
 }
 footer .inside-footer {
     height: 5px;

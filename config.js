@@ -3,4 +3,4 @@ exports.DATABASE_URL = process.env.DATABASE_URL ||
                        (process.env.NODE_ENV === 'production' ? 
                       'mongodb://localhost/node-capstone-shoppers-guide-bestbuy':
                          'mongodb://localhost/node-capstone-shoppers-guide-bestbuy');
-exports.PORT = process.env.PORT || 8080;
+exports.PORT = 3000;
