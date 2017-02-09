@@ -65,13 +65,13 @@ ol {
     list-style-type: none;
 }
 
-input, button {
-    padding: 0.2rem;
-    border-radius: 5px;
-    border: 1px solid gray;
-    margin-bottom: 0.2rem;
-}
-/*header styles*/
+/*input, button {*/
+/*    padding: 0.2rem;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid gray;*/
+/*    margin-bottom: 0.2rem;*/
+/*}*/
+header styles
 h3 {
     font-weight: 600;
 }
@@ -81,7 +81,7 @@ h3 {
     height: 100px;
     text-align: center;
     background-size: cover;
-     /*background-attachment: fixed;*/
+    background-attachment: fixed;
     background-position: 1px -100px; 
 }
 
@@ -127,7 +127,7 @@ h3 {
     width: auto;
     transition: width .2s linear;
     -webkit-transform: translateZ(0) scale(1, 1);
-    /*margin-top: 20px;*/
+    margin-top: 20px;
     float: left;
     background-color: #00164F;
 }
@@ -141,12 +141,12 @@ h3 {
     position: absolute;
     right: -80px;
     top: 30px;
-    /*background: url(images/cool-house.jpg);*/
+    background: url(images/cool-house.jpg);
     background-repeat: no-repeat;
     width: auto;
     background-color: white;
     margin: 0px;
-    /*margin-top:120px;*/
+    margin-top:120px;
     text-align: center;
     font-size: 15px;
     padding: 0.4rem;
@@ -161,7 +161,7 @@ h3 {
 
 .side-menu .scrollbar ul {
     list-style-type: square;
-    /*list-style-image: url('sqpurple.gif');*/
+    list-style-image: url('sqpurple.gif');
 }
 
 .side-menu .scrollbar li {
@@ -172,7 +172,7 @@ h3 {
 }
 
 .side-menu .scrollbar li>a {
-    /*position:relative;*/
+    position:relative;
     color: #51FF7E;
     font-size: 15px;
     text-decoration: none;
@@ -187,7 +187,7 @@ h3 {
 .content .search {
     margin: auto;
     width: 150px;
-    /*height: 30px;*/
+    height: 30px;
 }
 .content .search .search-items {
     margin-top: 5px;
@@ -196,16 +196,17 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 87%;
-    /*margin-top: 3rem;*/
+    margin-top: 3rem;
 }
-
+.content .search .search-items {
+    margin-top: 5px;
+}
 .content .results li {
     width: 49%;
     vertical-align: top;
     padding: 1rem 0.5rem 1rem 0.5rem;
     display: inline-block;
 }
-
 .content .results .product-container {
     position: relative;
     background-color: #fff;
@@ -223,10 +224,18 @@ h3 {
     position: absolute;
     bottom: 0;
     right: 0;
+    margin-top: 65px;
+    
 }
 
-.content .results .product-container .add-product-to-favorites button {
-     padding:0; 
+/*.content .results .product-container .add-product-to-favorites button {*/
+/*     padding:0; */
+/*     border-radius: 5px; */
+/*     border: 0; */
+/*     margin: 0; */
+/*}*/
+.content .results .product-container .add-product-to-favorites input, button{
+        padding:0; 
      border-radius: 5px; 
      border: 0; 
      margin: 0; 
@@ -410,6 +419,7 @@ textarea {
     margin-left: 100px;
     padding-bottom: 50px;
 }
+
 
 footer .inside-footer {
     height: 5px;
