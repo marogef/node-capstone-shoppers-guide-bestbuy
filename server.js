@@ -115,6 +115,21 @@ app.post('/login',function(req,res){
 });
 
 
+//Contact form get and post methods
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+app.get('/',function(req,res){
+  res.sendfile("index.html");
+});
+app.post('/btnLogin',function(req,res){
+  var name=req.body.name;
+  var email=req.body.email;
+  var message=req.body.msg;
+  console.log("User name = "+name+", email is "+email+", message is "+message);
+  res.end("yes");
+});
+
 
 exports.app = app;
 exports.runServer = runServer;
