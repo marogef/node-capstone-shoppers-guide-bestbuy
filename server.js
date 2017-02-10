@@ -99,6 +99,23 @@ app.post('/product', function(req, res) {
     });
 });
 
+
+//login section get and post methods
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+app.get('/',function(req,res){
+  res.sendfile("form.html");
+});
+app.post('/login',function(req,res){
+  var username=req.body.user;
+  var password=req.body.password;
+  console.log("User name = "+username+", password is "+password);
+  res.end("yes");
+});
+
+
+
 exports.app = app;
 exports.runServer = runServer;
 app.listen(process.env.PORT, process.env.IP);
