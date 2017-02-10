@@ -112,7 +112,7 @@ h3 {
 .form-signup input{
     margin-top: 5px;
     padding: 8px;
-    background-color: #fdf;
+    background-color: lightyellow;
 }
 .form-signup button{
     color: grey;
