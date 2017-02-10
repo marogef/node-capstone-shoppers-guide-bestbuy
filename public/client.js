@@ -183,16 +183,24 @@ function ajaxDone(result) {
 }
 
 
-$(document).ready(function(){
-     var username, password;
-        $("#btnLogin").click(function(){
-          user=$("#username").val();
-          pass=$("#password").val();
+ $(document).on('click', function(key) {
+         var user=$("#username").val();
+          var pass=$("#password").val();
           $.post("http://localhost:3000/login",{Username: username, Password: password}, function(data){
             if(data==='done')
               {
                 alert("Welcome");
               }
+          });
+        
+ $(document).on('click', function(key) {
+        var user=$("#name").val();
+          var pass=$("#email").val();
+          var  message=$("#msg").val();
+          $.post("http://localhost:3000/login",{user: name, pass: password, message: msg}, function(data){
+            if(data==='done')
+              {
+                alert("Thanks for the submission.  We will get back to you shortly.");
+              }
           }
-        }
-}
+ });
