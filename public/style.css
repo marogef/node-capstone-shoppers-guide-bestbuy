@@ -179,7 +179,7 @@ h3 {
 
 .side-menu .scrollbar ul {
     list-style-type: square;
-    list-style-image: url('sqpurple.gif');
+    /*list-style-image: url('sqpurple.gif');*/
 }
 
 .side-menu .scrollbar li {
@@ -441,23 +441,27 @@ textarea {
     padding-bottom: 50px;
 }
 
-.cart {
-	position: fixed;
-	top: 0;
-	right: -100%;
-	height: 100%;
+/*.cart {*/
+/*	position: fixed;*/
+/*	top: 0;*/
+/*	right: -100%;*/
+/*	height: 100%;*/
  
 	/* header height */
-	padding-top: 50px;
+/*	padding-top: 50px;*/
  
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+/*	overflow-y: auto;*/
+/*	-webkit-overflow-scrolling: touch;*/
  
-	transition: right 0.3s;
+/*	transition: right 0.3s;*/
  
-	&.speed-in {
-		right: 0;
-	}
+/*	&.speed-in {*/
+/*		right: 0;*/
+/*	}*/
+/*}*/
+
+.favorites{
+    
 }
 
 footer .inside-footer {

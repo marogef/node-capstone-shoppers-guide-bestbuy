@@ -46,31 +46,37 @@ if (require.main === module) {
 // ;
 // module.exports =function(query,callback) {
 //api call between the server and basketball api   
-var getProducts = function(product_name, args) {
+var getProducts = function(product_name) {
     // console.log("inside the getProducts function");
     var emitter = new events.EventEmitter();
 //    unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '*))?apiKey=t5reggzup769kevta2bdabkx&format=json&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc')
     unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=t5reggzup769kevta2bdabkx&format=json')
         //after api call we get the response inside the "response" parameter
+ 
         .end(function(response) {
+            
+            console.log(response);
             //success scenario
             if (response.ok) {
                 emitter.emit('end', response.body);
             }
             //failure scenario
             else {
-                //console.log("error line 28");
+                console.log("error line 28");
                 emitter.emit('error', response.code);
             }
         });
+        
     return emitter;
 };
 //api call between the view and the controller
 app.get('/product/:product_name', function(request, response, error) {
+    
     if (request.params.product_name == "") {
         response.json("Specify a product name");
     }
     else {
+    console.log(request.params.product_name);
 
         var productDetails = getProducts(request.params.product_name);
 
@@ -100,35 +106,35 @@ app.post('/product', function(req, res) {
 });
 
 
-//login section get and post methods
-app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+// //login section get and post methods
+// app.use(bodyParser.urlencoded({ extended: false }));
+// // app.use(bodyParser.json());
 
-app.get('/',function(req,res){
-  res.sendfile("form.html");
-});
-app.post('/login',function(req,res){
-  var username=req.body.user;
-  var password=req.body.password;
-  console.log("User name = "+username+", password is "+password);
-  res.end("yes");
-});
+// app.get('/',function(req,res){
+//   res.sendfile("form.html");
+// });
+// app.post('/login',function(req,res){
+//   var username=req.body.user;
+//   var password=req.body.password;
+//   console.log("User name = "+username+", password is "+password);
+//   res.end("yes");
+// });
 
 
-//Contact form get and post methods
-app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+// //Contact form get and post methods
+// app.use(bodyParser.urlencoded({ extended: false }));
+// // app.use(bodyParser.json());
 
-app.get('/',function(req,res){
-  res.sendfile("index.html");
-});
-app.post('/btnLogin',function(req,res){
-  var name=req.body.name;
-  var email=req.body.email;
-  var message=req.body.msg;
-  console.log("User name = "+name+", email is "+email+", message is "+message);
-  res.end("yes");
-});
+// app.get('/',function(req,res){
+//   res.sendfile("index.html");
+// });
+// app.post('/btnLogin',function(req,res){
+//   var name=req.body.name;
+//   var email=req.body.email;
+//   var message=req.body.msg;
+//   console.log("User name = "+name+", email is "+email+", message is "+message);
+//   res.end("yes");
+// });
 
 
 exports.app = app;
