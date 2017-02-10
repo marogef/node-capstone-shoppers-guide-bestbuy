@@ -120,6 +120,8 @@ h3 {
     margin-top: 10px;
     width: 160px;
     color: #12F715;
+     text-align: center;   
+
 }
 .form-signup input{
     margin-top: 5px;
@@ -128,6 +130,10 @@ h3 {
 }
 .form-signup button{
     color: grey;
+}
+.form-signup-greetings {
+ text-align: center;   
+ color: skyblue;
 }
 
 /*content styles*/
@@ -435,6 +441,24 @@ textarea {
     padding-bottom: 50px;
 }
 
+.cart {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	height: 100%;
+ 
+	/* header height */
+	padding-top: 50px;
+ 
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+ 
+	transition: right 0.3s;
+ 
+	&.speed-in {
+		right: 0;
+	}
+}
 
 footer .inside-footer {
     height: 5px;
