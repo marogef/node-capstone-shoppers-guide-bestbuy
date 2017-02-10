@@ -77,12 +77,12 @@ h3 {
 }
 
 .banner {
-    background: linear-gradient(white, transparent 10%), url(images/blue-e.jpg) no-repeat center;
+    background: linear-gradient(lightblue, transparent 10%), url(images/blue-e.jpg) no-repeat center;
     height: 100px;
     text-align: center;
     background-size: cover;
     background-attachment: fixed;
-    background-position: 1px -100px; 
+    /*background-position: 1px -100px; */
 }
 
 .banner h1 {
@@ -95,7 +95,6 @@ h3 {
     height: 20px;
 }
 .form-login {
-    color: orange;
     float: right;
     margin-top: 0.5rem;
 }
