@@ -65,12 +65,12 @@ ol {
     list-style-type: none;
 }
 
-/*input, button {*/
-/*    padding: 0.2rem;*/
-/*    border-radius: 5px;*/
-/*    border: 1px solid gray;*/
-/*    margin-bottom: 0.2rem;*/
-/*}*/
+input, button {
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 0.2rem;
+}
 header styles
 h3 {
     font-weight: 600;
@@ -84,11 +84,24 @@ h3 {
     background-attachment: fixed;
     /*background-position: 1px -100px; */
 }
+/*.banner input, button {*/
+/*    padding: 0.2rem;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid gray;*/
+/*    margin-bottom: 0.2rem;*/
+/*}*/
 
 .banner h1 {
     padding-top: 79px;
     color: white;
     font-size: 14px;
+}
+.banner .form-login button{
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    margin: 0;
+    width: 60px;
 }
 .banner img{
     width:50px;
@@ -200,6 +213,9 @@ h3 {
 .content .search .search-items {
     margin-top: 5px;
 }
+/*.content .search .search-items button {*/
+/*    width: 70px;*/
+/*}*/
 .content .results li {
     width: 49%;
     vertical-align: top;
@@ -370,6 +386,7 @@ textarea {
     border-bottom: 3px solid rgba(0, 0, 0, 0.05);
     background-color: #e8eeef;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    background: #fdfee6;
 }
 
 .final-content .container .form-contact {
@@ -383,7 +400,6 @@ textarea {
     /*margin: auto;*/
     margin-top: 195px;
     color: orange;
-
 }
 .final-content .container a[target="_blank"] {
     color: #39aad1;
@@ -393,7 +409,7 @@ textarea {
 
 .final-content .container .br {
     border-radius: .5em;
-    width: 500px;
+    width: 305px;
     margin-right: auto;
     margin-left: auto;
 }
