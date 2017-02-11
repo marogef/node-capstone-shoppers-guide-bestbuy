@@ -242,7 +242,7 @@ function ajaxDone(result) {
             else {
                 userData = res;
                 updatedData = res;
-                getAndDisplayStocks();
+
                 $('#login').hide();
                 $('.search').hide();
                 $('.form-login').hide();
@@ -251,18 +251,49 @@ function ajaxDone(result) {
         });
     });
 
-$(document).on('click', '#btnLogin', function(key) {
-    var user = $("#username").val();
-    var pass = $("#password").val();
-    $.post("/login", {
-        Username: user,
-        Password: pass
-    }, function(data) {
-        if (data === 'done') {
-            alert("Welcome");
-        }
+//Create a new user
+    
+    $('#form-submit').click (function (event) {
+        event.preventDefault();
+        $('#temp-error').hide();
+        let newUser = $('#new-user').val();
+        let newPassword = $('#new-pass').val();
+        let newEmail = $('#new-email').val();
+        var item = {'username' : newUser, 'password' : newPassword, 'userEmail' : newEmail};
+        
+        var ajax = $.ajax ('/new-user', {
+            type: 'POST',
+            data: JSON.stringify (item),
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+        ajax.done (function (res) {
+            if (res.response == 'error') {
+                $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
+                return;
+            }
+            else {
+                userData = res;
+                updatedData = res;
+                $('#newuser').hide();
+                $('#newPassword').hide();
+                $('#newEmail').hide();
+            }    
+        });
     });
-});
+
+// $(document).on('click', '#btnLogin', function(key) {
+//     var user = $("#username").val();
+//     var pass = $("#password").val();
+//     $.post("/login", {
+//         Username: user,
+//         Password: pass
+//     }, function(data) {
+//         if (data === 'done') {
+//             alert("Welcome");
+//         }
+//     });
+// });
 
 // //code for event handling for cart
 // function move_navigation( $navigation, $MQ) {
