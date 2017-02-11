@@ -15,34 +15,45 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
+function getResults(query) {
+    console.log(query);
+    var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
+    $.ajax({
+        method: 'GET',
+        url: url,
+        data: {
+            format: 'json',
+            apiKey: 't5reggzup769kevta2bdabkx',
+            page: 1,
+            pageSize: 36
+        },
+        cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
+        preowned: false,
+        active: true,
+        dataType: 'jsonp'
+    }).done(ajaxDone).fail(ifResultsFail);
+}
+
 // function getResults(query) {
 //     console.log(query);
-//     var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
+//     var url = '/product/' + query ;
 //     $.ajax({
 //         method: 'GET',
+//             // apiKey: 't5reggzup769kevta2bdabkx',
+//         dataType: 'json',
 //         url: url,
-//         data: {
-//             format: 'json',
-//             apiKey: 't5reggzup769kevta2bdabkx',
-//             page: 1,
-//             pageSize: 36
-//         },
-//         cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
-//         preowned: false,
-//         active: true,
-//         dataType: 'jsonp'
 //     }).done(ajaxDone).fail(ifResultsFail);
 // }
 
-function getResults(query) {
-    console.log(query);
-    var url = '/product/' + query ;
-    $.ajax({
-        method: 'GET',
-        dataType: 'json',
-        url: url
-    }).done(ajaxDone).fail(ifResultsFail);
-}
+// function getResults(query) {
+//     console.log(query);
+//     var url = '/product/' + query ;
+//     $.ajax({
+//         type: 'GET',
+//         dataType: 'json',
+//         url: url
+//     }).done(ajaxDone).fail(ifResultsFail);
+// }
 
 // function getResults(query) {
 //     console.log(query);
@@ -62,9 +73,6 @@ function getResults(query) {
 //         dataType: 'jsonp'
 //     }).done(ajaxDone).fail(ifResultsFail);
 // }
-
-
-
 
 function resultsIntoListItem(output, product) {
     var isSale;
@@ -207,6 +215,41 @@ function ajaxDone(result) {
     $('.loader').fadeOut('slow');
 }
 
+
+//Login an already existing user
+
+    $('#btnLogin').click (function (event) {
+        event.preventDefault();
+        $('#temp-error').hide();
+        let user-name = $('#username').val();
+        let user-password = $('#password').val();
+        let item = {
+            'username' : user-name, 
+            'password' : user-password
+        };
+        
+        var ajax = $.ajax ('/login', {
+            type: 'POST',
+            data: JSON.stringify (item),
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+        ajax.done (function (res) {
+            if (res.response == 'error') {
+                $('#login').append ('<div id="temp-error">' + res.message + '</div>');
+                return;
+            }
+            else {
+                userData = res;
+                updatedData = res;
+                getAndDisplayStocks();
+                $('#login').hide();
+                $('.search').hide();
+                $('.form-login').hide();
+                $('.mid-content').show();
+            }
+        });
+    });
 
 $(document).on('click', '#btnLogin', function(key) {
     var user = $("#username").val();
