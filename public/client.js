@@ -221,11 +221,11 @@ function ajaxDone(result) {
     $('#btnLogin').click (function (event) {
         event.preventDefault();
         $('#temp-error').hide();
-        let user-name = $('#username').val();
-        let user-password = $('#password').val();
+        let username = $('#username').val();
+        let userpassword = $('#password').val();
         let item = {
             'username' : user-name, 
-            'password' : user-password
+            'password' : userpassword
         };
         
         var ajax = $.ajax ('/login', {
@@ -251,7 +251,7 @@ function ajaxDone(result) {
         });
     });
 
-//Create a new user
+//new user submission function
     
     $('#form-submit').click (function (event) {
         event.preventDefault();
@@ -267,20 +267,27 @@ function ajaxDone(result) {
             dataType: 'json',
             contentType: 'application/json'
         });
-        ajax.done (function (res) {
-            if (res.response == 'error') {
-                $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
-                return;
-            }
-            else {
-                userData = res;
-                updatedData = res;
-                $('#newuser').hide();
-                $('#newPassword').hide();
-                $('#newEmail').hide();
-            }    
-        });
+    ajax.done(function(res){
+      accountStatus.text('Account created.  Please sign in');
     });
+  }
+    
+        
+        
+    //     ajax.done (function (res) {
+    //         if (res.response == 'error') {
+    //             $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
+    //             return;
+    //         }
+    //         else {
+    //             userData = res;
+    //             updatedData = res;
+    //             $('#newuser').hide();
+    //             $('#newPassword').hide();
+    //             $('#newEmail').hide();
+    //         }    
+    //     });
+    // });
 
 // $(document).on('click', '#btnLogin', function(key) {
 //     var user = $("#username").val();
