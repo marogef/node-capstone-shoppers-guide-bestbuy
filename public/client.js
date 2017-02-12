@@ -112,42 +112,36 @@ function resultsIntoListItem(output, product) {
     return output;
 }
 
-
-
 $(document).on('click', ".favorites", function(key) {
     $('#login').hide();
     $('.search').hide();
     $('.results').hide();
-    $('.mid-content').show();
-     addItem(favorites);
+    $('.mid-content').hide();
+     addItem();
 });
 
 //function to add items 
 function addItem() {
     //get the value of the input box
-    var itemValue = $('.product-container').val();
+    var itemValue = $('.title-wrapper').val();
 
     //dynamicaly create one row inside the shopping list
     var row = '';
     row += '<li>';
     row += '<span class="shopping-item">' + itemValue + '</span>';
-    row += '<div class="shopping-item-controls">';
-    row += '<button class="shopping-item-toggle">';
-    row += '<span class="button-label">check</span>';
-    row += '</button>';
-    row += '<button class="shopping-item-delete">';
-    row += '<span class="button-label">delete</span>';
-    row += '</button>';
-    row += '</div>';
-    row += '</li>';
-
+    // row += '<div class="shopping-item-controls">';
+    // row += '<button class="shopping-item-toggle">';
+    // row += '<span class="button-label">check</span>';
+    // row += '</button>';
+    // row += '<button class="shopping-item-delete">';
+    // row += '<span class="button-label">delete</span>';
+    // row += '</button>';
+    // row += '</div>';
+    // row += '</li>';
+  
     //add each row to the previous ones
-    $('.cart-items').append(row);
+    $('.results').append(row);
 }
-
-
-
-
 
 
 
