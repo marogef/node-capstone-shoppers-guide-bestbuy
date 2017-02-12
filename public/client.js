@@ -114,6 +114,13 @@ function resultsIntoListItem(output, product) {
 
 
 
+$(document).on('click', ".favorites", function(key) {
+    $('#login').hide();
+    $('.search').hide();
+    $('.results').hide();
+    $('.mid-content').show();
+     addItem(favorites);
+});
 
 //function to add items 
 function addItem() {
@@ -137,6 +144,12 @@ function addItem() {
     //add each row to the previous ones
     $('.cart-items').append(row);
 }
+
+
+
+
+
+
 
 //function to display results of list items
 function resultsIntoListItem(output, product) {
