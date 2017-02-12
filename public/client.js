@@ -1,3 +1,4 @@
+//Function for when the user presses enter to display results
 $(document).on('keypress', function(key) {
     //keyCode == 13 is the ENTER key
     if (key.keyCode == 13) {
@@ -8,6 +9,7 @@ $(document).on('keypress', function(key) {
     }
 });
 
+//Fuction when the user clicks to see the results
 $(document).on('click', "#userInput", function(key) {
     $('.loader').fadeIn('slow');
     var userInput = $('#search-section').val();
@@ -15,6 +17,7 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
+//function to get the results displayed
 function getResults(query) {
     console.log(query);
     var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
@@ -73,7 +76,7 @@ function getResults(query) {
 //         dataType: 'jsonp'
 //     }).done(ajaxDone).fail(ifResultsFail);
 // }
-
+//function for showing results
 function resultsIntoListItem(output, product) {
     var isSale;
     output += '<li>';
@@ -112,7 +115,7 @@ function resultsIntoListItem(output, product) {
 
 
 
-//function to add items
+//function to add items 
 function addItem() {
     //get the value of the input box
     var itemValue = $('.product-container').val();
@@ -135,7 +138,7 @@ function addItem() {
     $('.cart-items').append(row);
 }
 
-
+//function to display results of list items
 function resultsIntoListItem(output, product) {
     var isSale;
     output += '<li>';
@@ -182,19 +185,19 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-
+//function for clamp element
 function clampItemTitle(index, element) {
     $clamp(element, {
         clamp: 3
     });
 }
-
+//function in case if results fail
 function ifResultsFail(jqXHR, error, errorThrown) {
     console.log(jqXHR);
     console.log(error);
     console.log(errorThrown);
 }
-
+//function for displaying output
 function ajaxDone(result) {
     // console.log(result);
     var output = '';
@@ -216,7 +219,7 @@ function ajaxDone(result) {
 }
 
 
-//Login an already existing user
+//Function for Login an already existing user
 
     $('#btnLogin').click (function (event) {
         event.preventDefault();
@@ -251,8 +254,7 @@ function ajaxDone(result) {
         });
     });
 
-//new user submission function
-    
+//Function for new user submission function
     $('#form-submit').click (function (event) {
         event.preventDefault();
         $('#temp-error').hide();
@@ -270,7 +272,7 @@ function ajaxDone(result) {
     ajax.done(function(res){
       accountStatus.text('Account created.  Please sign in');
     });
-  }
+  });
     
         
         
