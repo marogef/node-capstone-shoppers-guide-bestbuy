@@ -148,8 +148,9 @@ function addItem() {
     // row += '</li>';
   
     //add each row to the previous ones
-    $('.results').append(row);
-    
+    // $('.results').append(row);
+        $('.search-results').append(row);
+
     //show results
 
 }
@@ -245,7 +246,7 @@ function ajaxDone(result) {
         let username = $('#username').val();
         let userpassword = $('#password').val();
         let item = {
-            'username' : user-name, 
+            'username' : username, 
             'password' : userpassword
         };
         
@@ -267,13 +268,13 @@ function ajaxDone(result) {
                 $('#login').hide();
                 $('.search').hide();
                 $('.form-login').hide();
-                $('.mid-content').show();
+                $('.mid-content').hide();
             }
         });
     });
 
 //Function for new user submission function
-    $('#form-submit').click (function (event) {
+    $('.form-submit').click (function (event) {
         event.preventDefault();
         $('#temp-error').hide();
         let newUser = $('#new-user').val();
@@ -288,12 +289,12 @@ function ajaxDone(result) {
             contentType: 'application/json'
         });
     ajax.done(function(res){
-      accountStatus.text('Account created.  Please sign in');
+       accountStatus.text('Account created.  Please sign in');
+        //   $('.form-signup').hide();
+
     });
   });
-    
-        
-        
+  
     //     ajax.done (function (res) {
     //         if (res.response == 'error') {
     //             $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
