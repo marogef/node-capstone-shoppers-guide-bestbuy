@@ -463,7 +463,19 @@ textarea {
 .favorites{
     
 }
-
+.search-results{
+    background-color: lightblue;
+    border: solid 3px black;
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    /*padding-bottom: 200px;*/
+    /*margin-top: 200px;*/
+    margin-top: 200px;
+    margin-bottom: 300px;
+    
+}
 footer .inside-footer {
     height: 5px;
     background-color: orange;

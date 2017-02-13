@@ -1,4 +1,10 @@
+//function to hide results when document loads
+$(document).ready(function(){
+        $(".search-results").hide();
+});
+
 //Function for when the user presses enter to display results
+
 $(document).on('keypress', function(key) {
     //keyCode == 13 is the ENTER key
     if (key.keyCode == 13) {
@@ -117,6 +123,8 @@ $(document).on('click', ".favorites", function(key) {
     $('.search').hide();
     $('.results').hide();
     $('.mid-content').hide();
+    $(".search-results").show();
+
      addItem();
 });
 
@@ -141,6 +149,9 @@ function addItem() {
   
     //add each row to the previous ones
     $('.results').append(row);
+    
+    //show results
+
 }
 
 
