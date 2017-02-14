@@ -256,7 +256,7 @@ h3 {
 /*     margin: 0; */
 /*}*/
 .content .results .product-container .add-product-to-favorites input, button{
-        padding:0; 
+     padding:0; 
      border-radius: 5px; 
      border: 0; 
      margin: 0; 
@@ -476,6 +476,15 @@ textarea {
     margin-bottom: 300px;
     
 }
+.search-results .add-item{
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /*margin-bottom: 0.2rem;*/
+    /*margin-top: 230px;*/
+    /*margin-right: 450px;*/
+}
+
 footer .inside-footer {
     height: 5px;
     background-color: orange;

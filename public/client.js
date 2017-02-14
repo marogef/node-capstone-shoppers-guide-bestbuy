@@ -1,3 +1,6 @@
+var totalList = 10;
+
+
 //function to hide results when document loads
 $(document).ready(function(){
         $(".search-results").hide();
@@ -23,36 +26,36 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
-//function to get the results displayed
-function getResults(query) {
-    console.log(query);
-    var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
-    $.ajax({
-        method: 'GET',
-        url: url,
-        data: {
-            format: 'json',
-            apiKey: 't5reggzup769kevta2bdabkx',
-            page: 1,
-            pageSize: 36
-        },
-        cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
-        preowned: false,
-        active: true,
-        dataType: 'jsonp'
-    }).done(ajaxDone).fail(ifResultsFail);
-}
-
+// //function to get the results displayed
 // function getResults(query) {
 //     console.log(query);
-//     var url = '/product/' + query ;
+//     var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
 //     $.ajax({
 //         method: 'GET',
-//             // apiKey: 't5reggzup769kevta2bdabkx',
-//         dataType: 'json',
 //         url: url,
+//         data: {
+//             format: 'json',
+//             apiKey: 't5reggzup769kevta2bdabkx',
+//             page: 1,
+//             pageSize: 36
+//         },
+//         cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
+//         preowned: false,
+//         active: true,
+//         dataType: 'jsonp'
 //     }).done(ajaxDone).fail(ifResultsFail);
 // }
+
+function getResults(query) {
+    console.log(query);
+    var url = '/product/' + query ;
+    $.ajax({
+        method: 'GET',
+            apiKey: 'ccw7r1Dxrz9wNwgQuNWLOKqZ',
+        dataType: 'json',
+        url: url,
+    }).done(ajaxDone).fail(ifResultsFail);
+}
 
 // function getResults(query) {
 //     console.log(query);
@@ -136,7 +139,7 @@ function addItem() {
     //dynamicaly create one row inside the shopping list
     var row = '';
     row += '<li>';
-    row += '<span class="shopping-item">' + itemValue + '</span>';
+    row += '<span class="product-container">' + itemValue + '</span>';
     // row += '<div class="shopping-item-controls">';
     // row += '<button class="shopping-item-toggle">';
     // row += '<span class="button-label">check</span>';
@@ -151,7 +154,8 @@ function addItem() {
     // $('.results').append(row);
         $('.search-results').append(row);
 
-    //show results
+         $('.search').hide();
+
 
 }
 
@@ -238,62 +242,77 @@ function ajaxDone(result) {
 }
 
 
-//Function for Login an already existing user
+// //Function for Login an already existing user
 
-    $('#btnLogin').click (function (event) {
-        event.preventDefault();
-        $('#temp-error').hide();
-        let username = $('#username').val();
-        let userpassword = $('#password').val();
-        let item = {
-            'username' : username, 
-            'password' : userpassword
-        };
+//     $('#btnLogin').click (function (event) {
+//         event.preventDefault();
+//         $('#temp-error').hide();
+//         let username = $('#username').val();
+//         let userpassword = $('#password').val();
+//         let item = {
+//             'username' : username, 
+//             'password' : userpassword
+//         };
         
-        var ajax = $.ajax ('/login', {
-            type: 'POST',
-            data: JSON.stringify (item),
-            dataType: 'json',
-            contentType: 'application/json'
-        });
-        ajax.done (function (res) {
-            if (res.response == 'error') {
-                $('#login').append ('<div id="temp-error">' + res.message + '</div>');
-                return;
-            }
-            else {
-                userData = res;
-                updatedData = res;
+//         var ajax = $.ajax ('/login', {
+//             type: 'POST',
+//             data: JSON.stringify (item),
+//             dataType: 'json',
+//             contentType: 'application/json'
+//         });
+//         ajax.done (function (res) {
+//             if (res.response == 'error') {
+//                 $('#login').append ('<div id="temp-error">' + res.message + '</div>');
+//                 return;
+//             }
+//             else {
+//                 userData = res;
+//                 updatedData = res;
 
-                $('#login').hide();
-                $('.search').hide();
-                $('.form-login').hide();
-                $('.mid-content').hide();
-            }
-        });
-    });
+//                 $('#login').hide();
+//                 $('.search').hide();
+//                 $('.form-login').hide();
+//                 $('.mid-content').hide();
+//             }
+//         });
+//     });
 
-//Function for new user submission function
-    $('.form-submit').click (function (event) {
-        event.preventDefault();
-        $('#temp-error').hide();
-        let newUser = $('#new-user').val();
-        let newPassword = $('#new-pass').val();
-        let newEmail = $('#new-email').val();
-        var item = {'username' : newUser, 'password' : newPassword, 'userEmail' : newEmail};
+// //Function for new user submission function
+//     $('.form-submit').click (function (event) {
+//         event.preventDefault();
+//         $('#temp-error').hide();
+//         let newUser = $('#new-user').val();
+//         let newPassword = $('#new-pass').val();
+//         let newEmail = $('#new-email').val();
+//         var item = {'username' : newUser, 'password' : newPassword, 'userEmail' : newEmail};
         
-        var ajax = $.ajax ('/new-user', {
-            type: 'POST',
-            data: JSON.stringify (item),
-            dataType: 'json',
-            contentType: 'application/json'
-        });
-    ajax.done(function(res){
-       accountStatus.text('Account created.  Please sign in');
-        //   $('.form-signup').hide();
+//         var ajax = $.ajax ('/new-user', {
+//             type: 'POST',
+//             data: JSON.stringify (item),
+//             dataType: 'json',
+//             contentType: 'application/json'
+//         });
+//     ajax.done(function(res){
+//       accountStatus.text('Account created.  Please sign in');
+//         //   $('.form-signup').hide();
 
-    });
-  });
+//     });
+//   });
+  
+//  //function to return to results and add more items
+//       $(".add-item").click(function () {
+//         $('.results').show();
+//           $('#login').show();
+//              //if the user clicks more than 10 times then prompt that basket is full
+//             if((".add-item").click < totalList)
+//             (
+                
+//             )
+//       });
+  
+  
+  
+  
   
     //     ajax.done (function (res) {
     //         if (res.response == 'error') {
