@@ -2,8 +2,8 @@ var totalList = 10;
 
 
 //function to hide results when document loads
-$(document).ready(function(){
-        $(".search-results").hide();
+$(document).ready(function() {
+    $(".search-results").hide();
 });
 
 //Function for when the user presses enter to display results
@@ -26,71 +26,41 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
-// //function to get the results displayed
-// function getResults(query) {
-//     console.log(query);
-//     var url = 'https://api.bestbuy.com/v1/products((name=' + query + '*)&type!=BlackTie&customerTopRated=true)?sort=salesRankShortTerm.asc';
-//     $.ajax({
-//         method: 'GET',
-//         url: url,
-//         data: {
-//             format: 'json',
-//             apiKey: 't5reggzup769kevta2bdabkx',
-//             page: 1,
-//             pageSize: 36
-//         },
-//         cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
-//         preowned: false,
-//         active: true,
-//         dataType: 'jsonp'
-//     }).done(ajaxDone).fail(ifResultsFail);
-// }
 
 function getResults(query) {
     console.log(query);
-    var url = '/product/' + query ;
+    var url = '/product/' + query;
     $.ajax({
         method: 'GET',
-            apiKey: 'ccw7r1Dxrz9wNwgQuNWLOKqZ',
+        apiKey: 'ccw7r1Dxrz9wNwgQuNWLOKqZ',
         dataType: 'json',
         url: url,
     }).done(ajaxDone).fail(ifResultsFail);
 }
 
-// function getResults(query) {
-//     console.log(query);
-//     var url = '/product/' + query ;
-//     $.ajax({
-//         type: 'GET',
-//         dataType: 'json',
-//         url: url
-//     }).done(ajaxDone).fail(ifResultsFail);
-// }
+function sanitizeJSON(unsanitized) {
+    var str = JSON.stringify(unsanitized);
+    var output = str
+        .replace(/\\/g, "-")
+        .replace(/\//g, "-")
+        .replace(/\n/g, "")
+        .replace(/\r/g, "")
+        .replace(/\t/g, "")
+        .replace(/\f/g, "")
+        .replace(/"/g, "")
+        .replace(/'/g, "")
+        .replace(/\®/g, "")
+        .replace(/\&/g, "");
+    return output;
+}
 
-// function getResults(query) {
-//     console.log(query);
-//     var url = '/product/' + query ;
-//     $.ajax({
-//         method: 'GET',
-//         url: url,
-//         data: {
-//             format: 'json',
-//             apiKey: 't5reggzup769kevta2bdabkx',
-//             page: 1,
-//             pageSize: 36;
-//         },
-//         cache: true, // necessary because our API rejects queries with unrecognized query parameters, such as the underscore injected when this isn't included
-//         preowned: false,
-//         active: true,
-//         dataType: 'jsonp'
-//     }).done(ajaxDone).fail(ifResultsFail);
-// }
+
 //function for showing results
 function resultsIntoListItem(output, product) {
     var isSale;
     output += '<li>';
     output += '<div class="product-container">';
-    output += '<div class="title-wrapper"><h3 class="clamp-this">' + product.name + '</h3></div>';
+    output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     output += '<img src="' + product.image + '">';
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
@@ -122,41 +92,56 @@ function resultsIntoListItem(output, product) {
 }
 
 $(document).on('click', ".favorites", function(key) {
-    $('#login').hide();
-    $('.search').hide();
-    $('.results').hide();
-    $('.mid-content').hide();
-    $(".search-results").show();
+    var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
 
-     addItem();
+    // $(".search-results").show();
+
+    addFavoriteProduct(favoriteProductName);
 });
 
 //function to add items 
-function addItem() {
-    //get the value of the input box
-    var itemValue = $('.title-wrapper').val();
+function addFavoriteProduct(favoriteProductName) {
 
-    //dynamicaly create one row inside the shopping list
-    var row = '';
-    row += '<li>';
-    row += '<span class="product-container">' + itemValue + '</span>';
-    // row += '<div class="shopping-item-controls">';
-    // row += '<button class="shopping-item-toggle">';
-    // row += '<span class="button-label">check</span>';
-    // row += '</button>';
-    // row += '<button class="shopping-item-delete">';
-    // row += '<span class="button-label">delete</span>';
-    // row += '</button>';
-    // row += '</div>';
-    // row += '</li>';
-  
-    //add each row to the previous ones
-    // $('.results').append(row);
-        $('.search-results').append(row);
+    console.log(favoriteProductName);
 
-         $('.search').hide();
+    var favoriteProduct = {
+        'productName': favoriteProductName
+    };
 
+    $.ajax({
+            method: 'POST',
+            dataType: 'json',
+            data: favoriteProduct,
+            url: '/favorite-product/',
+        })
+        .done(function(product) {
+            alert("Product added favorites");
+            getFavoriteProducts();
+        })
+        .fail(ifResultsFail);
+}
 
+function getFavoriteProducts() {
+
+    $.ajax({
+            method: 'GET',
+            dataType: 'json',
+            url: '/favorite-products',
+        })
+        .done(function(products) {
+            console.log(products);
+
+            var buildTheHtmlOutput = "";
+
+            $.each(products, function(productsKey, productsValue) {
+                buildTheHtmlOutput += "<li>" + productsValue.name + "</li>";
+            });
+
+            //use the HTML output to show it in the index.html
+            $(".favorites-container ul").html(buildTheHtmlOutput);
+
+        })
+        .fail(ifResultsFail);
 }
 
 
@@ -166,10 +151,11 @@ function resultsIntoListItem(output, product) {
     var isSale;
     output += '<li>';
     output += '<div class="product-container">';
-    output += '<div class="add-product-to-favoritess">';
-    output += '<input type="hidden" value="' + product.name + '">';
+    output += '<div class="add-product-to-favorites">';
+    output += '<input type="hidden" value="' + sanitizeJSON(product.name) + '">';
+    output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
     output += '</div>';
-    output += '<div class="title-wrapper"><h3 class="clamp-this">' + product.name + '</h3></div>';
+    output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     if (product.image != null) {
         output += '<img src="' + product.image + '">';
     }
@@ -196,12 +182,10 @@ function resultsIntoListItem(output, product) {
     output += '</div>';
     if (isSale == false) {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
-        output += '<button class="favorites" type="submit"><img src="images/add-to-favorites.png"></button>';
 
     }
     else {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart sale-button">Add to Cart</a>';
-        output += '<button class="favorites" type="submit"><img src="images/add-to-favorites.png"></button>';
 
     }
     output += '</div>';
@@ -229,7 +213,6 @@ function ajaxDone(result) {
     }
     else {
         if (!result.error && result.products) {
-            console.log(result.products);
             output = result.products.reduce(resultsIntoListItem, '');
         }
         else {
@@ -253,7 +236,7 @@ function ajaxDone(result) {
 //             'username' : username, 
 //             'password' : userpassword
 //         };
-        
+
 //         var ajax = $.ajax ('/login', {
 //             type: 'POST',
 //             data: JSON.stringify (item),
@@ -285,7 +268,7 @@ function ajaxDone(result) {
 //         let newPassword = $('#new-pass').val();
 //         let newEmail = $('#new-email').val();
 //         var item = {'username' : newUser, 'password' : newPassword, 'userEmail' : newEmail};
-        
+
 //         var ajax = $.ajax ('/new-user', {
 //             type: 'POST',
 //             data: JSON.stringify (item),
@@ -298,7 +281,7 @@ function ajaxDone(result) {
 
 //     });
 //   });
-  
+
 //  //function to return to results and add more items
 //       $(".add-item").click(function () {
 //         $('.results').show();
@@ -306,28 +289,28 @@ function ajaxDone(result) {
 //              //if the user clicks more than 10 times then prompt that basket is full
 //             if((".add-item").click < totalList)
 //             (
-                
+
 //             )
 //       });
-  
-  
-  
-  
-  
-    //     ajax.done (function (res) {
-    //         if (res.response == 'error') {
-    //             $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
-    //             return;
-    //         }
-    //         else {
-    //             userData = res;
-    //             updatedData = res;
-    //             $('#newuser').hide();
-    //             $('#newPassword').hide();
-    //             $('#newEmail').hide();
-    //         }    
-    //     });
-    // });
+
+
+
+
+
+//     ajax.done (function (res) {
+//         if (res.response == 'error') {
+//             $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
+//             return;
+//         }
+//         else {
+//             userData = res;
+//             updatedData = res;
+//             $('#newuser').hide();
+//             $('#newPassword').hide();
+//             $('#newEmail').hide();
+//         }    
+//     });
+// });
 
 // $(document).on('click', '#btnLogin', function(key) {
 //     var user = $("#username").val();
@@ -352,5 +335,3 @@ function ajaxDone(result) {
 // 		$navigation.insertAfter('header');
 // 	}
 // }
-
-

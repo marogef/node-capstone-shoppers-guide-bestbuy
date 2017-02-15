@@ -124,9 +124,9 @@ app.get('/product/:product_name', function(request, response) {
     }
 });
 
-app.post('/product', function(req, res) {
+app.post('/favorite-product', function(req, res) {
     Product.create({
-        name: req.body.name
+        name: req.body.productName
     }, function(err, products) {
         if (err) {
             return res.status(500).json({
@@ -134,6 +134,16 @@ app.post('/product', function(req, res) {
             });
         }
         res.status(201).json(products);
+    });
+});
+app.get('/favorite-products', function (req, res) {
+    Product.find(function (err, products) {
+        if (err) {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            });
+        }
+        res.status(200).json(products);
     });
 });
 
