@@ -41,7 +41,9 @@
     -o-padding-start: 0px;
     -o-padding-end: 0px;
 }
+
 /*general styles*/
+
 body {
     font-size: 15px;
     font-family: 'Nunito', sans-serif;
@@ -71,7 +73,9 @@ input, button {
     border: 1px solid gray;
     margin-bottom: 0.2rem;
 }
-header styles
+
+/*header styles*/
+
 h3 {
     font-weight: 600;
 }
@@ -84,18 +88,13 @@ h3 {
     background-attachment: fixed;
     /*background-position: 1px -100px; */
 }
-/*.banner input, button {*/
-/*    padding: 0.2rem;*/
-/*    border-radius: 5px;*/
-/*    border: 1px solid gray;*/
-/*    margin-bottom: 0.2rem;*/
-/*}*/
 
 .banner h1 {
     padding-top: 79px;
     color: white;
     font-size: 14px;
 }
+
 .banner .favorites-container {
     position: fixed;
     top: 0;
@@ -106,6 +105,7 @@ h3 {
     font-size: 12px;
     z-index: 1000;
 }
+
 .banner .favorites-container ul {
     list-style-type: circle;
 }
@@ -117,40 +117,14 @@ h3 {
     margin: 0;
     width: 60px;
 }
+
 .banner img{
     width:50px;
     height: 20px;
 }
-.form-login {
-    float: right;
-    margin-top: 0.5rem;
-}
-.form-login input{
-    
-}
-.form-signup{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    width: 160px;
-    color: #12F715;
-     text-align: center;   
-
-}
-.form-signup input{
-    margin-top: 5px;
-    padding: 8px;
-    background-color: lightyellow;
-}
-.form-signup button{
-    color: grey;
-}
-.form-signup-greetings {
- text-align: center;   
- color: skyblue;
-}
 
 /*content styles*/
+
 .side-menu {
     border: 1px solid gray;
     position: absolute;
@@ -185,6 +159,7 @@ h3 {
     transform: rotate(90deg);
     transform-origin: left top 0;
 }
+
 .side-menu .side-logo a {
     text-decoration: none;
 }
@@ -216,32 +191,35 @@ h3 {
     background-color: #115391;
     /*background-image: url('./images/cool-house.jpg');*/
 }
+
 .content .search {
     margin: auto;
     width: 150px;
     height: 30px;
 }
+
 .content .search .search-items {
     margin-top: 5px;
 }
+
 .content .results {
     margin-left: auto;
     margin-right: auto;
     width: 87%;
     margin-top: 3rem;
 }
+
 .content .search .search-items {
     margin-top: 5px;
 }
-/*.content .search .search-items button {*/
-/*    width: 70px;*/
-/*}*/
+
 .content .results li {
     width: 49%;
     vertical-align: top;
     padding: 1rem 0.5rem 1rem 0.5rem;
     display: inline-block;
 }
+
 .content .results .product-container {
     position: relative;
     background-color: #fff;
@@ -346,21 +324,6 @@ h3 {
     margin-top: 1.56rem;
 }
 
-/*.inside-form {*/
-/*    height: 5px;*/
-/*    background-color: orange;*/
-/*    margin-top: 515px;*/
-/*}*/
-
-/*.final-content .container .reset-password {*/
-/*    margin-left: 360px;*/
-/*    margin-top: 10px;*/
-/*}*/
-
-/*.reset-password p {*/
-/*    color: orange;*/
-/*    margin-bottom: 5px;*/
-/*}*/
 .mid-content {
     background-color: #1153B1;
     height: 640px;
@@ -368,6 +331,7 @@ h3 {
     /* background-size: 950px 560px; */
     background-size: cover;
 }
+
 .mid-content p{
     color: #DDFFE6;
     /*text-align: left;*/
@@ -376,13 +340,6 @@ h3 {
     line-height: 2.0;
     /*text-shadow: 2px 2px #F4DE7B;*/
     padding-top: 32px;
-
-    
-}
-.final-content{
-    /*background-color: #063A5C;*/
-    /*margin-top: 538px;*/
-    /*background: url(images/88.jpg) no-repeat center;*/
 }
 
 .final-content .container input,
@@ -406,12 +363,10 @@ textarea {
 .final-content .container .form-contact {
     padding: 20px 24px;
     background: #f4f7f8;
-  
 }
 
 .final-content .container {
     width: 100%;
-    /*margin: auto;*/
     margin-top: 195px;
     color: orange;
 }
@@ -449,28 +404,6 @@ textarea {
     padding-bottom: 50px;
 }
 
-/*.cart {*/
-/*	position: fixed;*/
-/*	top: 0;*/
-/*	right: -100%;*/
-/*	height: 100%;*/
- 
-	/* header height */
-/*	padding-top: 50px;*/
- 
-/*	overflow-y: auto;*/
-/*	-webkit-overflow-scrolling: touch;*/
- 
-/*	transition: right 0.3s;*/
- 
-/*	&.speed-in {*/
-/*		right: 0;*/
-/*	}*/
-/*}*/
-
-.favorites{
-    
-}
 .search-results{
     background-color: lightblue;
     border: solid 3px black;
@@ -478,8 +411,6 @@ textarea {
     height: 300px;
     margin-left: auto;
     margin-right: auto;
-    /*padding-bottom: 200px;*/
-    /*margin-top: 200px;*/
     margin-top: 200px;
     margin-bottom: 300px;
     
@@ -488,10 +419,9 @@ textarea {
     padding: 0.4rem;
     border-radius: 5px;
     border: 1px solid gray;
-    /*margin-bottom: 0.2rem;*/
-    /*margin-top: 230px;*/
-    /*margin-right: 450px;*/
 }
+
+/*footer styles */
 
 footer .inside-footer {
     height: 5px;
