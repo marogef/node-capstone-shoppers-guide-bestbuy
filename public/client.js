@@ -1,17 +1,20 @@
 var totalList = 10;
 
+
 //function to hide results when document loads
 $(document).ready(function() {
     $(".search-results").hide();
 });
 
 //Function for when the user presses enter to display results
+
 $(document).on('keypress', function(key) {
     //keyCode == 13 is the ENTER key
     if (key.keyCode == 13) {
         $('.loader').fadeIn('slow');
         var userInput = $('#search-section').val();
         getResults(userInput);
+        // $('#search-section').val('');
     }
 });
 
@@ -23,7 +26,7 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
-//fuction to get the results from the query
+
 function getResults(query) {
     console.log(query);
     var url = '/product/' + query;
@@ -35,7 +38,6 @@ function getResults(query) {
     }).done(ajaxDone).fail(ifResultsFail);
 }
 
-//function to shorten the product details
 function sanitizeJSON(unsanitized) {
     var str = JSON.stringify(unsanitized);
     var output = str
@@ -88,9 +90,11 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-// fuction for when you click on favorites
+
 $(document).on('click', ".favorites", function(key) {
     var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
+
+    // $(".search-results").show();
 
     addFavoriteProduct(favoriteProductName);
 });
@@ -116,8 +120,9 @@ function addFavoriteProduct(favoriteProductName) {
         })
         .fail(ifResultsFail);
 }
-//fuction to add the favorite product
+
 function getFavoriteProducts() {
+
     $.ajax({
             method: 'GET',
             dataType: 'json',
@@ -138,6 +143,8 @@ function getFavoriteProducts() {
         })
         .fail(ifResultsFail);
 }
+
+
 
 //function to display results of list items
 function resultsIntoListItem(output, product) {
@@ -185,21 +192,18 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-
 //function for clamp element
 function clampItemTitle(index, element) {
     $clamp(element, {
         clamp: 3
     });
 }
-
 //function in case if results fail
 function ifResultsFail(jqXHR, error, errorThrown) {
     console.log(jqXHR);
     console.log(error);
     console.log(errorThrown);
 }
-
 //function for displaying output
 function ajaxDone(result) {
     // console.log(result);

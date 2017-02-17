@@ -9,6 +9,7 @@ var path=require('path');
 var mongoose = require('mongoose');
 var config = require('./config');
 var Product = require('./models/product');
+var User = require('./models/user');
 
 //for api
 var unirest = require('unirest');
@@ -20,6 +21,8 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 var bcrypt = require('bcryptjs');
 var methodOverride = require('method-override');
+
+
 
 
 /* STEP 2 - initialize the app*/
@@ -73,9 +76,11 @@ if (require.main === module) {
 
 //api call between the server and best buy api   
 var getProducts = function(product_name) {
+    // console.log("inside the getProducts function");
     var emitter = new events.EventEmitter();
     
     unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
+        //after api call we get the response inside the "response" parameter
 
     .end(function(response) {
 
@@ -102,6 +107,7 @@ app.get('/product/:product_name', function(request, response) {
         response.json("Specify a product name");
     }
     else {
+        //console.log(request.params.product_name);
 
         var productDetails = getProducts(request.params.product_name);
 
@@ -142,6 +148,44 @@ app.get('/favorite-products', function (req, res) {
 });
 
 
+/* STEP 5 - login section get and post methods */
+
+passport.use(new passportLocal.Strategy(function(username, password, done) {
+
+
+    User.getUserByUsername(username, function(err, username) {
+        if (err) throw err;
+        if (!username) {
+            console.log('Unknown user');
+            return done(null, false, {
+                message: 'Unknown user'
+            });
+        }
+        else {
+            //console.log(username);
+            var hash = username.password;
+            if (bcrypt.compareSync(password, hash)) {
+
+                console.log("Autehntication passed");
+                return done(null, {
+                    id: username._id,
+                    username: username.username
+                });
+
+            }
+            else {
+                console.log('Invalid password');
+                return done(null, false, {
+                    message: 'Invalid password'
+                });
+            }
+
+        }
+    });
+
+}));
+
+
 passport.serializeUser(function(username, done) {
 
     done(null, username.id);
@@ -158,6 +202,9 @@ passport.deserializeUser(function(id, done) {
 app.get('/', function(req, res) {
 
     console.log("IS In Index", req.isAuthenticated());
+    //if(req.isAuthenticated())
+    //  console.log(req.user.username);
+    //console.log("Request object is " , req.body );
     if (req.isAuthenticated()) {
         res.render('index', {
             isAuthenticated: req.isAuthenticated(),
@@ -174,7 +221,49 @@ app.get('/', function(req, res) {
     }
 });
 
+app.get('/login', function(req, res) {
+    res.render('login', {
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
+    //console.log("Inside login function" , req.isAuthenticated());
+    //console.log("Inside login function", req.body);
+});
 
+app.post('/login', passport.authenticate('local', {
+    failureRedirect: '/'
+}), function(req, res) {
+    console.log(req.body.username, req.body.password)
+    retStatus = 'Success';
+    res.send({
+        retStatus: retStatus,
+        redirectTo: '/',
+        msg: 'Auth successful' // this should help
+    });
+});
+
+
+
+app.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
+
+// //Contact form get and post methods
+// app.use(bodyParser.urlencoded({ extended: false }));
+// // app.use(bodyParser.json());
+
+// app.get('/',function(req,res){
+//   res.sendfile("index.html");
+// });
+// app.post('/btnLogin',function(req,res){
+//   var name=req.body.name;
+//   var email=req.body.email;
+//   var message=req.body.msg;
+//   console.log("User name = "+name+", email is "+email+", message is "+message);
+//   res.end("yes");
+// });
 
 /* STEP 6 - start and run the server*/
 exports.app = app;
