@@ -10,7 +10,6 @@ $(document).ready(function() {
 
 $(document).on('keypress', function(key) {
     if (key.keyCode == 13) {
-        $('.loader').fadeIn('slow');
         var userInput = $('#search-section').val();
         getResults(userInput);
     }
@@ -18,7 +17,7 @@ $(document).on('keypress', function(key) {
 
 //Fuction when the user clicks to see the results
 $(document).on('click', "#userInput", function(key) {
-    $('.loader').fadeIn('slow');
+    
     var userInput = $('#search-section').val();
     getResults(userInput);
     $('#search-section').val('');
@@ -202,7 +201,7 @@ function ifResultsFail(jqXHR, error, errorThrown) {
 
 //function for displaying output
 function ajaxDone(result) {
-    // console.log(result);
+    console.log("ajax done", result);
     var output = '';
     if (result.products.length == 0) {
         alert('No Results Found!');
@@ -217,5 +216,4 @@ function ajaxDone(result) {
         $('.results ul').html(output);
         $('.clamp-this').each(clampItemTitle);
     }
-    $('.loader').fadeOut('slow');
 }

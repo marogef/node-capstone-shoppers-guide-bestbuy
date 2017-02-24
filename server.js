@@ -76,9 +76,8 @@ if (require.main === module) {
 
 //api call between the server and best buy api   
 var getProducts = function(product_name) {
-    // console.log("inside the getProducts function");
+    console.log("inside the getProducts function");
     var emitter = new events.EventEmitter();
-                                  https://api.bestbuy.com/v1/products((search=ipad))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json
     unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
         //after api call we get the response inside the "response" parameter
 
