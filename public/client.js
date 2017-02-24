@@ -9,12 +9,10 @@ $(document).ready(function() {
 //Function for when the user presses enter to display results
 
 $(document).on('keypress', function(key) {
-    //keyCode == 13 is the ENTER key
     if (key.keyCode == 13) {
         $('.loader').fadeIn('slow');
         var userInput = $('#search-section').val();
         getResults(userInput);
-        // $('#search-section').val('');
     }
 });
 
@@ -93,9 +91,6 @@ function resultsIntoListItem(output, product) {
 
 $(document).on('click', ".favorites", function(key) {
     var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
-
-    // $(".search-results").show();
-
     addFavoriteProduct(favoriteProductName);
 });
 
@@ -115,7 +110,6 @@ function addFavoriteProduct(favoriteProductName) {
             url: '/favorite-product/',
         })
         .done(function(product) {
-            alert("Product added favorites");
             getFavoriteProducts();
         })
         .fail(ifResultsFail);
@@ -198,12 +192,14 @@ function clampItemTitle(index, element) {
         clamp: 3
     });
 }
+
 //function in case if results fail
 function ifResultsFail(jqXHR, error, errorThrown) {
     console.log(jqXHR);
     console.log(error);
     console.log(errorThrown);
 }
+
 //function for displaying output
 function ajaxDone(result) {
     // console.log(result);
@@ -223,115 +219,3 @@ function ajaxDone(result) {
     }
     $('.loader').fadeOut('slow');
 }
-
-
-// //Function for Login an already existing user
-
-//     $('#btnLogin').click (function (event) {
-//         event.preventDefault();
-//         $('#temp-error').hide();
-//         let username = $('#username').val();
-//         let userpassword = $('#password').val();
-//         let item = {
-//             'username' : username, 
-//             'password' : userpassword
-//         };
-
-//         var ajax = $.ajax ('/login', {
-//             type: 'POST',
-//             data: JSON.stringify (item),
-//             dataType: 'json',
-//             contentType: 'application/json'
-//         });
-//         ajax.done (function (res) {
-//             if (res.response == 'error') {
-//                 $('#login').append ('<div id="temp-error">' + res.message + '</div>');
-//                 return;
-//             }
-//             else {
-//                 userData = res;
-//                 updatedData = res;
-
-//                 $('#login').hide();
-//                 $('.search').hide();
-//                 $('.form-login').hide();
-//                 $('.mid-content').hide();
-//             }
-//         });
-//     });
-
-// //Function for new user submission function
-//     $('.form-submit').click (function (event) {
-//         event.preventDefault();
-//         $('#temp-error').hide();
-//         let newUser = $('#new-user').val();
-//         let newPassword = $('#new-pass').val();
-//         let newEmail = $('#new-email').val();
-//         var item = {'username' : newUser, 'password' : newPassword, 'userEmail' : newEmail};
-
-//         var ajax = $.ajax ('/new-user', {
-//             type: 'POST',
-//             data: JSON.stringify (item),
-//             dataType: 'json',
-//             contentType: 'application/json'
-//         });
-//     ajax.done(function(res){
-//       accountStatus.text('Account created.  Please sign in');
-//         //   $('.form-signup').hide();
-
-//     });
-//   });
-
-//  //function to return to results and add more items
-//       $(".add-item").click(function () {
-//         $('.results').show();
-//           $('#login').show();
-//              //if the user clicks more than 10 times then prompt that basket is full
-//             if((".add-item").click < totalList)
-//             (
-
-//             )
-//       });
-
-
-
-
-
-//     ajax.done (function (res) {
-//         if (res.response == 'error') {
-//             $('#newuser').append ('<div id="temp-error">' + res.message + '</div>');
-//             return;
-//         }
-//         else {
-//             userData = res;
-//             updatedData = res;
-//             $('#newuser').hide();
-//             $('#newPassword').hide();
-//             $('#newEmail').hide();
-//         }    
-//     });
-// });
-
-// $(document).on('click', '#btnLogin', function(key) {
-//     var user = $("#username").val();
-//     var pass = $("#password").val();
-//     $.post("/login", {
-//         Username: user,
-//         Password: pass
-//     }, function(data) {
-//         if (data === 'done') {
-//             alert("Welcome");
-//         }
-//     });
-// });
-
-// //code for event handling for cart
-// function move_navigation( $navigation, $MQ) {
-// 	if ( $(window).width() >= $MQ ) {
-// 		$navigation.detach();
-// 		$navigation.appendTo('header');
-// 	} else {
-// 		$navigation.detach();
-// 		$navigation.insertAfter('header');
-// 	}
-// }
