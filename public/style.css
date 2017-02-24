@@ -1,0 +1,500 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    /*reset Firefox user agent styles*/
+    -moz-margin-before: 0px;
+    -moz-margin-after: 0px;
+    -moz-margin-start: 0px;
+    -moz-margin-end: 0px;
+    -moz-padding-before: 0px;
+    -moz-padding-after: 0px;
+    -moz-padding-start: 0px;
+    -moz-padding-end: 0px;
+    /*reset Internet Explorer user agent styles*/
+    -ms-margin-before: 0px;
+    -ms-margin-after: 0px;
+    -ms-margin-start: 0px;
+    -ms-margin-end: 0px;
+    -ms-padding-before: 0px;
+    -ms-padding-after: 0px;
+    -ms-padding-start: 0px;
+    -ms-padding-end: 0px;
+    /*reset Opera user agent styles*/
+    -o-margin-before: 0px;
+    -o-margin-after: 0px;
+    -o-margin-start: 0px;
+    -o-margin-end: 0px;
+    -o-padding-before: 0px;
+    -o-padding-after: 0px;
+    -o-padding-start: 0px;
+    -o-padding-end: 0px;
+}
+/*general styles*/
+body {
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #115391;
+}
+
+a:hover,
+a:focus {
+    border-left: 0px solid #F7F7F6;
+}
+
+nav ul,
+nav li {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+input, button {
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 0.2rem;
+}
+header styles
+h3 {
+    font-weight: 600;
+}
+
+.banner {
+    background: linear-gradient(lightblue, transparent 10%), url(images/blue-e.jpg) no-repeat center;
+    height: 100px;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /*background-position: 1px -100px; */
+}
+/*.banner input, button {*/
+/*    padding: 0.2rem;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid gray;*/
+/*    margin-bottom: 0.2rem;*/
+/*}*/
+
+.banner h1 {
+    padding-top: 79px;
+    color: white;
+    font-size: 14px;
+}
+.banner .favorites-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    color: black;
+    text-align: left;
+    font-size: 12px;
+    z-index: 1000;
+}
+.banner .favorites-container ul {
+    list-style-type: circle;
+}
+
+.banner .form-login button{
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    margin: 0;
+    width: 60px;
+}
+.banner img{
+    width:50px;
+    height: 20px;
+}
+.form-login {
+    float: right;
+    margin-top: 0.5rem;
+}
+.form-login input{
+    
+}
+.form-signup{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 160px;
+    color: #12F715;
+     text-align: center;   
+
+}
+.form-signup input{
+    margin-top: 5px;
+    padding: 8px;
+    background-color: lightyellow;
+}
+.form-signup button{
+    color: grey;
+}
+.form-signup-greetings {
+ text-align: center;   
+ color: skyblue;
+}
+
+/*content styles*/
+.side-menu {
+    border: 1px solid gray;
+    position: absolute;
+    top: 103px;
+    left: -140px;
+    width: auto;
+    transition: width .2s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    margin-top: 20px;
+    float: left;
+    background-color: #00164F;
+}
+
+.side-menu:hover {
+    left: 0px;
+}
+
+.side-menu .side-logo {
+    float: right;
+    position: absolute;
+    right: -80px;
+    top: 30px;
+    background: url(images/cool-house.jpg);
+    background-repeat: no-repeat;
+    width: auto;
+    background-color: white;
+    margin: 0px;
+    margin-top:120px;
+    text-align: center;
+    font-size: 15px;
+    padding: 0.4rem;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+}
+.side-menu .side-logo a {
+    text-decoration: none;
+}
+
+.side-menu .scrollbar .menu-img {}
+
+.side-menu .scrollbar ul {
+    list-style-type: square;
+    /*list-style-image: url('sqpurple.gif');*/
+}
+
+.side-menu .scrollbar li {
+    display: block;
+    width: auto;
+    margin: 10px;
+    padding-left: 10px;
+}
+
+.side-menu .scrollbar li>a {
+    position:relative;
+    color: #51FF7E;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'Strait', sans-serif;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.content{
+    background-color: #115391;
+    /*background-image: url('./images/cool-house.jpg');*/
+}
+.content .search {
+    margin: auto;
+    width: 150px;
+    height: 30px;
+}
+.content .search .search-items {
+    margin-top: 5px;
+}
+.content .results {
+    margin-left: auto;
+    margin-right: auto;
+    width: 87%;
+    margin-top: 3rem;
+}
+.content .search .search-items {
+    margin-top: 5px;
+}
+/*.content .search .search-items button {*/
+/*    width: 70px;*/
+/*}*/
+.content .results li {
+    width: 49%;
+    vertical-align: top;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    display: inline-block;
+}
+.content .results .product-container {
+    position: relative;
+    background-color: #fff;
+    min-height: 22rem;
+    min-width: 100%;
+    padding: 1rem;
+    display: inline-block;
+    text-align: center;
+    -webkit-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+    -moz-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+    box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
+}
+
+.content .results .product-container .add-product-to-favorites {
+    position: absolute;
+    top: 0;
+    left: 0;
+        margin-top: 3px;
+    margin-left: 3px;
+}
+
+.content .results .product-container .add-product-to-favorites button{
+     padding:0; 
+     border: 0; 
+     margin: 0; 
+}
+.content .results .product-container .add-product-to-favorites img{
+    max-width: 100%;
+    width: 20px;
+    height: auto;
+     padding:0; 
+     margin: 0; 
+}
+
+.content .results img {
+    display: block;
+    max-width: 90%;
+    height: 6rem;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 1.25rem auto 1rem auto;
+}
+
+.content .results .title-wrapper {
+    height: 5rem;
+    display: table;
+    width: 100%;
+    /* forms as a table cell */
+}
+
+.content .results h3 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.content .product-details {
+    min-height: 6.5rem;
+}
+
+.content .add-to-cart {
+    display: block;
+    text-align: center;
+    width: 50%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #333;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #193366;
+    color: #fff;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+    box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
+}
+
+.content .sale-button {
+    background: #F4DE7B;
+    color: #333;
+    border: 1px solid #C2AA3D;
+    font-weight: 600;
+}
+
+.content .strikethrough {
+    text-decoration: line-through;
+}
+
+.content .highlight {
+    color: red;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.content .strong {
+    font-weight: 800;
+}
+
+.content .no-sale {
+    margin-top: 1.56rem;
+}
+
+/*.inside-form {*/
+/*    height: 5px;*/
+/*    background-color: orange;*/
+/*    margin-top: 515px;*/
+/*}*/
+
+/*.final-content .container .reset-password {*/
+/*    margin-left: 360px;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.reset-password p {*/
+/*    color: orange;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+.mid-content {
+    background-color: #1153B1;
+    height: 640px;
+    /* background: url(images/flying-gadget.jpg) no-repeat center; */
+    /* background-size: 950px 560px; */
+    background-size: cover;
+}
+.mid-content p{
+    color: #DDFFE6;
+    /*text-align: left;*/
+    width: 400px;
+    /*margin-top: 10px;*/
+    line-height: 2.0;
+    /*text-shadow: 2px 2px #F4DE7B;*/
+    padding-top: 32px;
+
+    
+}
+.final-content{
+    /*background-color: #063A5C;*/
+    /*margin-top: 538px;*/
+    /*background: url(images/88.jpg) no-repeat center;*/
+}
+
+.final-content .container input,
+textarea {
+    font-size: 1em;
+    color: black;
+    font-weight: 300;
+    /*width: 20%;*/
+    border: none;
+    height: auto;
+    padding: -1px;
+    outline: 0;
+    margin-bottom: 0.2em;
+    border-radius: .3em;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    background: #fdfee6;
+}
+
+.final-content .container .form-contact {
+    padding: 20px 24px;
+    background: #f4f7f8;
+  
+}
+
+.final-content .container {
+    width: 100%;
+    /*margin: auto;*/
+    margin-top: 195px;
+    color: orange;
+}
+.final-content .container a[target="_blank"] {
+    color: #39aad1;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.final-content .container .br {
+    border-radius: .5em;
+    width: 305px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.final-content .container .btn {
+    cursor: pointer;
+    font-size: -0.125em;
+    font-weight: 400;
+    color: red;
+}
+.final-content .container input[type="text"] {
+    background: #fdfee6;
+}
+
+.final-content .signup input {
+    margin-top: 30px;
+    display: block
+}
+
+.final-content .signup fieldset {
+    padding-left: 150px;
+    margin-left: 100px;
+    padding-bottom: 50px;
+}
+
+/*.cart {*/
+/*	position: fixed;*/
+/*	top: 0;*/
+/*	right: -100%;*/
+/*	height: 100%;*/
+ 
+	/* header height */
+/*	padding-top: 50px;*/
+ 
+/*	overflow-y: auto;*/
+/*	-webkit-overflow-scrolling: touch;*/
+ 
+/*	transition: right 0.3s;*/
+ 
+/*	&.speed-in {*/
+/*		right: 0;*/
+/*	}*/
+/*}*/
+
+.favorites{
+    
+}
+.search-results{
+    background-color: lightblue;
+    border: solid 3px black;
+    width: 500px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    /*padding-bottom: 200px;*/
+    /*margin-top: 200px;*/
+    margin-top: 200px;
+    margin-bottom: 300px;
+    
+}
+.search-results .add-item{
+    padding: 0.4rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /*margin-bottom: 0.2rem;*/
+    /*margin-top: 230px;*/
+    /*margin-right: 450px;*/
+}
+
+footer .inside-footer {
+    height: 5px;
+    background-color: orange;
+    margin-top: 5px;
+}
