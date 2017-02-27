@@ -117,6 +117,17 @@ app.get('/favorite-products', function(req, res) {
     });
 });
 
+app.delete('/delete-favorites', function (req, res) {
+    Product.remove(req.params.id, function (err, items) {
+        if (err)
+            return res.status(404).json({
+                message: 'Item not found.'
+            });
+
+        res.status(200).json(items);
+    });
+});
+
 /* STEP 6 - start and run the server*/
 exports.app = app;
 exports.runServer = runServer;

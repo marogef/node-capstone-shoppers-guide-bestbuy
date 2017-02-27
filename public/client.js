@@ -1,6 +1,7 @@
 //function to hide results when document loads
 $(document).ready(function() {
     $(".search-results").hide();
+    getFavoriteProducts();
 });
 
 //Function for when the user presses enter to display results
@@ -87,6 +88,11 @@ $(document).on('click', ".favorites", function(key) {
     addFavoriteProduct(favoriteProductName);
 });
 
+//clicking the favorites to delete the favorites 
+$(document).on('click', ".delete-favorites", function(key) {
+    deleteFavorites();
+});
+
 //function to add items 
 function addFavoriteProduct(favoriteProductName) {
 
@@ -101,6 +107,22 @@ function addFavoriteProduct(favoriteProductName) {
             dataType: 'json',
             data: favoriteProduct,
             url: '/favorite-product/',
+        })
+        .done(function(product) {
+            getFavoriteProducts();
+        })
+        .fail(ifResultsFail);
+}
+
+//function to delete favorites
+function deleteFavorites() {
+
+    console.log("inside detele favourites");
+    
+    $.ajax({
+            method: 'DELETE',
+            dataType: 'json',
+            url: '/delete-favorites/',
         })
         .done(function(product) {
             getFavoriteProducts();

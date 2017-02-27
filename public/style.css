@@ -79,33 +79,70 @@ h3 {
 
 .banner {
     background: linear-gradient(lightblue, transparent 10%), url(images/blue-e.jpg) no-repeat center;
-    height: 100px;
-    text-align: center;
+    text-align: left;
     background-size: cover;
     background-attachment: fixed;
     /*background-position: 1px -100px; */
 }
 
 .banner h1 {
-    padding-top: 79px;
+    padding-top: 50px;
+    padding-bottom: 20px;
     color: white;
     font-size: 14px;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    color: #115391;
 }
+
 .banner .favorites-container {
+    background-image: url("../images/transparent.jpg");
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 15px;
     width: 20%;
-    color: black;
-    text-align: left;
-    font-size: 12px;
+    color: white;
+    /* text-align: left; */
+    font-size: 10px;
     z-index: 1000;
     border: 2px gray solid;
     border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+    max-height: 150px;
+    min-width: 150px;
+    overflow-y: auto;
 }
 .banner .favorites-container ul {
-        list-style-type: decimal;
+    list-style-type: decimal;
+    text-align: left;
+    margin: 0 15px;
+}
+.banner .favorites-container ul li{
+    margin-top: 10px;
+}
 
+.banner .favorites-container .delete-favorites {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.banner .favorites-container .delete-favorites button{
+     padding:0; 
+     border: 0; 
+     margin: 0;
+     width: 14px;
+     height: 14px;
+}
+.banner .favorites-container .delete-favorites img{
+    max-width: 100%;
+    height: auto;
+     padding:0; 
+     margin: 0; 
 }
 
 .banner img{
@@ -125,6 +162,7 @@ h3 {
     margin-top: 20px;
     float: left;
     background-color: #00164F;
+    z-index: 10000;
 }
 
 .side-menu:hover {
@@ -175,14 +213,19 @@ h3 {
 .content{
     background-color: #115391;
     /*background-image: url('./images/cool-house.jpg');*/
+    text-align: center;
 }
 .content .search {
-    margin: auto;
-    width: 150px;
-    height: 30px;
+    margin: 0 auto;
+    width: auto;
+    display: block;
 }
 .content .search .search-items {
     margin-top: 5px;
+}
+.content .search .search-items input{
+    display: inline-block;
+    width: auto;
 }
 .content .results {
     margin-left: auto;
@@ -190,9 +233,7 @@ h3 {
     width: 87%;
     margin-top: 3rem;
 }
-.content .search .search-items {
-    margin-top: 5px;
-}
+
 
 .content .results li {
     width: 49%;
@@ -299,19 +340,19 @@ h3 {
 
 .mid-content {
     background-color: #1153B1;
-    height: 640px;
     background-size: cover;
     border-style: dotted;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 .mid-content p {
     color: #DDFFE6;
     text-align: center;
-    width: 400px;
     line-height: 2.0;
-    padding-top: 32px;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    width: 80%;
+    max-width: 500px;
     font-family: cursive;
 }
 
@@ -341,4 +382,22 @@ footer .inside-footer {
     height: 5px;
     background-color: orange;
     margin-top: 5px;
+}
+
+
+/*reposnsive */
+
+@media only screen and (max-width: 800px) {
+    .banner,
+    .content,
+    .search-results,
+    footer,
+    .mid-content {
+        width: 100%;
+        border-top: none;
+    }
+    .content .results li {
+        width: 100%;
+        display: block;
+    }
 }
