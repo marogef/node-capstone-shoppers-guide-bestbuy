@@ -3,7 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var events = require('events');
-var path=require('path');
+// var path=require('path');
 
 //for the db
 var mongoose = require('mongoose');
@@ -12,17 +12,6 @@ var Product = require('./models/product');
 
 //for api
 var unirest = require('unirest');
-
-//for auth
-var cookieParser = require('cookie-parser');
-var expressSession = require('express-session');
-var passport = require('passport');
-var passportLocal = require('passport-local');
-var bcrypt = require('bcryptjs');
-var methodOverride = require('method-override');
-
-
-
 
 /* STEP 2 - initialize the app*/
 var app = express();
@@ -34,20 +23,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(methodOverride());
-
-app.use(cookieParser());
-app.use(expressSession({
-    secret: 'secret123',
-    resave: true,
-    saveUninitialized: true,
-    activeDuration: 5 * 60 * 1000
-}));
-
-// To do local authentication below lines are mandatory
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 /* STEP 3 - creating objects and constructors*/
 var runServer = function(callback) {
@@ -76,12 +51,12 @@ if (require.main === module) {
 
 //api call between the server and best buy api   
 var getProducts = function(product_name) {
-    console.log("inside the getProducts function");
+    //console.log("inside the getProducts function");
     var emitter = new events.EventEmitter();
     unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
-        //after api call we get the response inside the "response" parameter
-
+    //after api call we get the response inside the "response" parameter
     .end(function(response) {
+        console.log(response.body);
         //success scenario
         if (response.ok) {
             emitter.emit('end', response.body);
@@ -99,7 +74,7 @@ var getProducts = function(product_name) {
 
 //api call between the view and the controller
 app.get('/product/:product_name', function(request, response) {
-
+    //console.log(request.params.product_name);
     if (request.params.product_name == "") {
         response.json("Specify a product name");
     }
@@ -131,8 +106,8 @@ app.post('/favorite-product', function(req, res) {
         res.status(201).json(products);
     });
 });
-app.get('/favorite-products', function (req, res) {
-    Product.find(function (err, products) {
+app.get('/favorite-products', function(req, res) {
+    Product.find(function(err, products) {
         if (err) {
             return res.status(500).json({
                 message: 'Internal Server Error'

@@ -41,6 +41,7 @@
     -o-padding-start: 0px;
     -o-padding-end: 0px;
 }
+
 /*general styles*/
 body {
     font-size: 15px;
@@ -99,50 +100,18 @@ h3 {
     text-align: left;
     font-size: 12px;
     z-index: 1000;
+    border: 2px gray solid;
+    border-radius: 7px;
 }
 .banner .favorites-container ul {
-    list-style-type: circle;
+        list-style-type: decimal;
+
 }
 
-/*.banner .form-login button{*/
-/*    padding: 8px;*/
-/*    border-radius: 5px;*/
-/*    border: 0;*/
-/*    margin: 0;*/
-/*    width: 60px;*/
-/*}*/
 .banner img{
     width:50px;
     height: 20px;
 }
-/*.form-login {*/
-/*    float: right;*/
-/*    margin-top: 0.5rem;*/
-/*}*/
-/*.form-login input{*/
-    
-/*}*/
-/*.form-signup{*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    margin-top: 10px;*/
-/*    width: 160px;*/
-/*    color: #12F715;*/
-/*     text-align: center;   */
-
-/*}*/
-/*.form-signup input{*/
-/*    margin-top: 5px;*/
-/*    padding: 8px;*/
-/*    background-color: lightyellow;*/
-/*}*/
-/*.form-signup button{*/
-/*    color: grey;*/
-/*}*/
-/*.form-signup-greetings {*/
-/* text-align: center;   */
-/* color: skyblue;*/
-/*}*/
 
 /*content styles*/
 .side-menu {
@@ -181,8 +150,6 @@ h3 {
 .side-menu .side-logo a {
     text-decoration: none;
 }
-
-.side-menu .scrollbar .menu-img {}
 
 .side-menu .scrollbar ul {
     list-style-type: square;
@@ -280,13 +247,6 @@ h3 {
     height: 5rem;
     display: table;
     width: 100%;
-    /* forms as a table cell */
-}
-
-.content .results h3 {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
 }
 
 .content .product-details {
@@ -340,90 +300,21 @@ h3 {
 .mid-content {
     background-color: #1153B1;
     height: 640px;
-    /* background: url(images/flying-gadget.jpg) no-repeat center; */
-    /* background-size: 950px 560px; */
     background-size: cover;
+    border-style: dotted;
 }
-.mid-content p{
+.mid-content p {
     color: #DDFFE6;
-    /*text-align: left;*/
+    text-align: center;
     width: 400px;
-    /*margin-top: 10px;*/
     line-height: 2.0;
-    /*text-shadow: 2px 2px #F4DE7B;*/
     padding-top: 32px;
-
-    
-}
-.final-content{
-    /*background-color: #063A5C;*/
-    /*margin-top: 538px;*/
-    /*background: url(images/88.jpg) no-repeat center;*/
-}
-
-.final-content .container input,
-textarea {
-    font-size: 1em;
-    color: black;
-    font-weight: 300;
-    /*width: 20%;*/
-    border: none;
-    height: auto;
-    padding: -1px;
-    outline: 0;
-    margin-bottom: 0.2em;
-    border-radius: .3em;
-    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
-    background-color: #e8eeef;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-    background: #fdfee6;
-}
-
-/*.final-content .container .form-contact {*/
-/*    padding: 20px 24px;*/
-/*    background: #f4f7f8;*/
-  
-/*}*/
-
-.final-content .container {
-    width: 100%;
-    /*margin: auto;*/
-    margin-top: 195px;
-    color: orange;
-}
-.final-content .container a[target="_blank"] {
-    color: #39aad1;
-    text-decoration: none;
-    border-bottom: 1px dotted;
-}
-
-.final-content .container .br {
-    border-radius: .5em;
-    width: 305px;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    font-family: cursive;
 }
 
-.final-content .container .btn {
-    cursor: pointer;
-    font-size: -0.125em;
-    font-weight: 400;
-    color: red;
-}
-.final-content .container input[type="text"] {
-    background: #fdfee6;
-}
-
-.final-content .signup input {
-    margin-top: 30px;
-    display: block
-}
-
-.final-content .signup fieldset {
-    padding-left: 150px;
-    margin-left: 100px;
-    padding-bottom: 50px;
-}
 .search-results{
     background-color: lightblue;
     border: solid 3px black;

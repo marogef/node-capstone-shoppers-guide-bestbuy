@@ -1,13 +1,9 @@
-var totalList = 10;
-
-
 //function to hide results when document loads
 $(document).ready(function() {
     $(".search-results").hide();
 });
 
 //Function for when the user presses enter to display results
-
 $(document).on('keypress', function(key) {
     if (key.keyCode == 13) {
         var userInput = $('#search-section').val();
@@ -23,18 +19,17 @@ $(document).on('click', "#userInput", function(key) {
     $('#search-section').val('');
 });
 
-
+//function to get results from api
 function getResults(query) {
-    console.log(query);
+    //console.log(query);
     var url = '/product/' + query;
     $.ajax({
         method: 'GET',
-        apiKey: 'ccw7r1Dxrz9wNwgQuNWLOKqZ',
         dataType: 'json',
         url: url,
     }).done(ajaxDone).fail(ifResultsFail);
 }
-
+//function to get the shorten the output
 function sanitizeJSON(unsanitized) {
     var str = JSON.stringify(unsanitized);
     var output = str
@@ -50,7 +45,6 @@ function sanitizeJSON(unsanitized) {
         .replace(/\&/g, "");
     return output;
 }
-
 
 //function for showing results
 function resultsIntoListItem(output, product) {
@@ -87,7 +81,7 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-
+//clicking the favorites to add the product 
 $(document).on('click', ".favorites", function(key) {
     var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
     addFavoriteProduct(favoriteProductName);
@@ -113,7 +107,7 @@ function addFavoriteProduct(favoriteProductName) {
         })
         .fail(ifResultsFail);
 }
-
+//function to get the favorite product
 function getFavoriteProducts() {
 
     $.ajax({
@@ -185,13 +179,6 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-//function for clamp element
-function clampItemTitle(index, element) {
-    $clamp(element, {
-        clamp: 3
-    });
-}
-
 //function in case if results fail
 function ifResultsFail(jqXHR, error, errorThrown) {
     console.log(jqXHR);
@@ -214,6 +201,5 @@ function ajaxDone(result) {
             output = 'Unable to access products (see browser console for more information)';
         }
         $('.results ul').html(output);
-        $('.clamp-this').each(clampItemTitle);
     }
 }
