@@ -3,6 +3,13 @@
 Summary
 Use this application to search for electronic products or get pointers on where to go in order to get the best deal.  It uses the Best Buy API in order to make the search.  From there you can add an item and store it as a favorite in your list that is very useful for all users.
 ![demo](https://cloud.githubusercontent.com/assets/15663296/23442770/ac5c9e06-fdf8-11e6-8030-543a81b0b085.png)
+![demo](https://cloud.githubusercontent.com/assets/15663296/23442787/c79ed828-fdf8-11e6-89d4-386977a2a323.png)
+![demo](https://cloud.githubusercontent.com/assets/15663296/23442792/cf20bc06-fdf8-11e6-87b4-4e4cf1eb3fdf.png)
+
+
+
+
+
 API
 Best Buy REST API.
 
