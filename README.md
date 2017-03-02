@@ -18,4 +18,6 @@ Methods: GET, POST, PUT, DELETE.
 
 Design features:  The design for the website includes desktop and tablet devices.
 
+Direct link:  https://node-capstone-shoppers-guide-goldencrane33.c9users.io/.
+
 Final comment: Special thanks to Best Buy, whose API makes this app possible.
