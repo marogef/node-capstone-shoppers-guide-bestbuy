@@ -51,22 +51,42 @@ if (require.main === module) {
 
 //api call between the server and best buy api   
 var getProducts = function(product_name) {
+    
     //console.log("inside the getProducts function");
+    
     var emitter = new events.EventEmitter();
-    https://api.bestbuy.com/v1/products((search=ipad))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json
-    unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
-    //after api call we get the response inside the "response" parameter
-    .end(function(response) {
-        console.log(response.body);
-        //success scenario
-        if (response.ok) {
-            emitter.emit('end', response.body);
-        }
-        //failure scenario
-        else {
-            emitter.emit('api call retuned error:', response.code);
-        }
+    
+    //https://www.npmjs.com/package/bestbuy
+    var bby = require('bestbuy')('ccw7r1Dxrz9wNwgQuNWLOKqZ');
+    bby.products('(search=' + product_name + ')', {pageSize: 10}, function(err, data) {
+      if (err) {
+          console.warn(err);
+          emitter.emit('api call retuned error:', err);
+      }
+      else if (data.total === 0) {
+          console.log('No products found');
+          emitter.emit('No products found', err);
+      }
+      else {
+          console.log('Found %d products. First match "%s" is $%d', data.total, data.products[0].name, data.products[0].salePrice);
+          emitter.emit('end', data);
+      }
     });
+    
+   
+    // unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
+    // //after api call we get the response inside the "response" parameter
+    // .end(function(response) {
+    //     console.log(response.body);
+    //     //success scenario
+    //     if (response.ok) {
+    //         emitter.emit('end', response.body);
+    //     }
+    //     //failure scenario
+    //     else {
+    //         emitter.emit('api call retuned error:', response.code);
+    //     }
+    // });
 
     return emitter;
 };
