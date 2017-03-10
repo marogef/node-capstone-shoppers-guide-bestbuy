@@ -116,9 +116,7 @@ function addFavoriteProduct(favoriteProductName) {
 
 //function to delete favorites
 function deleteFavorites() {
-
-    console.log("inside detele favourites");
-    
+    console.log("inside delete favorites");
     $.ajax({
             method: 'DELETE',
             dataType: 'json',
