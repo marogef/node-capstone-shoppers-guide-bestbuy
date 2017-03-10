@@ -73,21 +73,6 @@ var getProducts = function(product_name) {
       }
     });
     
-   
-    // unirest.post('https://api.bestbuy.com/v1/products((search=' + product_name + '))?apiKey=ccw7r1Dxrz9wNwgQuNWLOKqZ&format=json')
-    // //after api call we get the response inside the "response" parameter
-    // .end(function(response) {
-    //     console.log(response.body);
-    //     //success scenario
-    //     if (response.ok) {
-    //         emitter.emit('end', response.body);
-    //     }
-    //     //failure scenario
-    //     else {
-    //         emitter.emit('api call retuned error:', response.code);
-    //     }
-    // });
-
     return emitter;
 };
 
