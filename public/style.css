@@ -347,13 +347,13 @@ h3 {
 }
 .mid-content p {
     color: #DDFFE6;
-    text-align: center;
+    /*text-align: center;*/
     line-height: 2.0;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
     max-width: 500px;
-    font-family: cursive;
+    font-family: ariel;
 }
 
 .search-results{
