@@ -114,6 +114,10 @@ h3 {
     min-width: 150px;
     overflow-y: auto;
 }
+
+.banner .favorites-container .delete-favorites h2{
+    font-size: 15px;
+}
 .banner .favorites-container ul {
     list-style-type: decimal;
     text-align: left;
@@ -121,6 +125,7 @@ h3 {
 }
 .banner .favorites-container ul li{
     margin-top: 10px;
+    font-size: 14px;
 }
 
 .banner .favorites-container .delete-favorites {
