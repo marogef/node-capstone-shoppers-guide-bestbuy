@@ -160,7 +160,7 @@ h3 {
     border: 1px solid gray;
     position: absolute;
     top: 103px;
-    left: -140px;
+    left: -150px;
     width: auto;
     transition: width .2s linear;
     -webkit-transform: translateZ(0) scale(1, 1);
@@ -177,8 +177,8 @@ h3 {
 .side-menu .side-logo {
     float: right;
     position: absolute;
-    right: -80px;
-    top: 30px;
+    right: -117px;
+    top: -58px;
     background-repeat: no-repeat;
     width: auto;
     background-color: white;
