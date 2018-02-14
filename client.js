@@ -93,7 +93,7 @@ function resultsIntoListItem(output, product) {
 
 
 
-//clicking the favorites to add the recipe 
+//clicking the favorites to add the products 
 $(document).on('click',".favorites", function(key) {
     
      if(!$(this).hasClass('visited'))

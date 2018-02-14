@@ -82,10 +82,24 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-//clicking the favorites to add the product 
-$(document).on('click', ".favorites", function(key) {
-    var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
-    addFavoriteProduct(favoriteProductName);
+
+//clicking the favorites to add the products 
+$(document).on('click',".favorites", function(key) {
+    
+     if(!$(this).hasClass('visited'))
+    {
+        $(this).addClass('visited');
+      
+   var favoriteProductName = document.querySelector("a").href;
+
+        addFavoriteProduct(favoriteProductName);
+          return true;
+}
+else
+    {
+        return false;
+    }
+
 });
 
 //clicking the favorites to delete the favorites 
