@@ -91,13 +91,37 @@ function resultsIntoListItem(output, product) {
     return output;
 }
 
-$(document).on('click', ".favorites", function(key) {
-    var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
 
-    // $(".search-results").show();
 
-    addFavoriteProduct(favoriteProductName);
+//clicking the favorites to add the recipe 
+$(document).on('click',".favorites", function(key) {
+    
+     if(!$(this).hasClass('visited'))
+    {
+        $(this).addClass('visited');
+      
+   var favoriteProductName = document.querySelector("a").href;
+
+        addFavoriteProduct(favoriteProductName);
+          return true;
+}
+else
+    {
+        return false;
+    }
+
 });
+
+
+
+
+//$(document).on('click', ".favorites", function(key) {
+//    var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
+//
+//    // $(".search-results").show();
+//
+//    addFavoriteProduct(favoriteProductName);
+//});
 
 //function to add items 
 function addFavoriteProduct(favoriteProductName) {
