@@ -392,7 +392,87 @@ footer .inside-footer {
 
 /*reposnsive */
 
+/*
 @media only screen and (max-width: 800px) {
+    .banner,
+    .content,
+    .search-results,
+    footer,
+    .mid-content {
+        width: 100%;
+        border-top: none;
+    }
+    .content .results li {
+        width: 100%;
+        display: block;
+    }
+}
+*/
+
+
+
+
+@media only screen and (max-width: 1200px){
+    .banner,
+    .content,
+    .search-results,
+    footer,
+    .mid-content {
+        width: 100%;
+        border-top: none;
+    }
+    .content .results li {
+        width: 100%;
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width: 450px){
+    .banner,
+    .content,
+    .search-results,
+    footer,
+    .mid-content {
+        width: 100%;
+        border-top: none;
+    }
+    .content .results li {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .banner,
+    .content,
+    .search-results,
+    footer,
+    .mid-content {
+        width: 100%;
+        border-top: none;
+    }
+    .content .results li {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 996px){
+
+.about {
+    padding: 70px 0px 270px 0px;
+  }
+
+.about .about-me {
+    width: 50%;
+}
+ .about .my-pic img{
+     /*max-width: 40%;*/
+     max-width: 100%;
+ }
+}
+@media only screen and (max-width: 780px){
     .banner,
     .content,
     .search-results,
