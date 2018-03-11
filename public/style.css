@@ -140,8 +140,10 @@ h3 {
 
 .banner .favorites-container .delete-favorites{
     position: absolute;
+/*
     margin-top: 55px;
     margin-left: 0px;
+*/
 }
 
 .banner .favorites-container .delete-favorites button {
