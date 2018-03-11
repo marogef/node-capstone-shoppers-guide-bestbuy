@@ -159,7 +159,7 @@ function getFavoriteProducts() {
             });
 
             //use the HTML output to show it in the index.html
-            $(".favorites-container li").html(buildTheHtmlOutput);
+            $(".favorites-container ul").html(buildTheHtmlOutput);
 
         })
         .fail(ifResultsFail);
@@ -234,6 +234,6 @@ function ajaxDone(result) {
         else {
             output = 'Unable to access products (see browser console for more information)';
         }
-        $('.results li').html(output);
+        $('.results ul').html(output);
     }
 }
