@@ -100,7 +100,7 @@ $(document).on('click',".favorites", function(key) {
     {
         $(this).addClass('visited');
       
-   var favoriteProductName = document.querySelector("a").href;
+   var favoriteProductName = document.querySelector("li").href;
 
         addFavoriteProduct(favoriteProductName);
           return true;
@@ -162,7 +162,7 @@ function getFavoriteProducts() {
             });
 
             //use the HTML output to show it in the index.html
-            $(".favorites-container ul").html(buildTheHtmlOutput);
+            $(".favorites-container li").html(buildTheHtmlOutput);
 
         })
         .fail(ifResultsFail);
@@ -242,7 +242,7 @@ function ajaxDone(result) {
         else {
             output = 'Unable to access products (see browser console for more information)';
         }
-        $('.results ul').html(output);
+        $('.results li').html(output);
         $('.clamp-this').each(clampItemTitle);
     }
     $('.loader').fadeOut('slow');
