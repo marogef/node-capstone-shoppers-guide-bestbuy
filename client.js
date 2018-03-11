@@ -100,7 +100,7 @@ $(document).on('click',".favorites", function(key) {
     {
         $(this).addClass('visited');
       
-   var favoriteProductName = document.querySelector("li").href;
+   var favoriteProductName = document.querySelector("a").href;
 
         addFavoriteProduct(favoriteProductName);
           return true;
