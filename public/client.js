@@ -54,6 +54,8 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     output += '<img src="' + product.image + '">';
+    output += '<p><a target="_blank"  class ="linking" href=https://www.bestbuy.com' + matches.id + ' >' + matches.productname + '</a></p>';
+
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
         output += '<p class="review-num">' + product.customerReviewCount + ' Reviews</p>';
@@ -89,8 +91,9 @@ $(document).on('click',".favorites", function(key) {
      if(!$(this).hasClass('visited'))
     {
         $(this).addClass('visited');
+         var favoriteProductName= $(".linking").attr('href');
       
-   var favoriteProductName = document.querySelector("a").href;
+//   var favoriteProductName = document.querySelector("a").href;
 
         addFavoriteProduct(favoriteProductName);
           return true;
