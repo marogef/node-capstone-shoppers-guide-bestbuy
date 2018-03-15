@@ -91,11 +91,7 @@ $(document).on('click',".favorites", function(key) {
      if(!$(this).hasClass('visited'))
     {
         $(this).addClass('visited');
-         var favoriteProductName= $(".linking").attr('href');
-      
-//   var favoriteProductName = document.querySelector("a").href;
-
-        addFavoriteProduct(favoriteProductName);
+        addFavoriteRecipe($(this).parents('li').find('.linking').attr('href'));
           return true;
 }
 else
