@@ -54,7 +54,7 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     output += '<img src="' + product.image + '">';
-    output += '<p><a target="_blank"  class ="linking" href=https://www.bestbuy.com' + matches.id + ' >' + matches.productname + '</a></p>';
+    output += '<p><a target="_blank"  class ="linking" href=https://www.bestbuy.com/' + product.id + ' >' + product.productName + '</a></p>';
 
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
