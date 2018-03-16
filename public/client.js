@@ -154,7 +154,7 @@ function getFavoriteProducts() {
             var buildTheHtmlOutput = "";
 
             $.each(products, function(productsKey, productsValue) {
-                buildTheHtmlOutput += '<li><a href=' + ' >' + product.url+ '</a></li>';
+                buildTheHtmlOutput += '<li><a href=>' + productsValue.name + '</a></li>';
             });
 
             //use the HTML output to show it in the index.html
