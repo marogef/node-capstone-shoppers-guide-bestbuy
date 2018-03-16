@@ -102,7 +102,7 @@ $(document).on('click',".favorites", function(key) {
     {
         $(this).addClass('visited');
       
-        addFavoriteRecipe($(this).parents('li').find('.linking').attr('href'));
+        addFavoriteProduct($(this).parents('li').find('.linking').attr('href'));
 
           return true;
 }

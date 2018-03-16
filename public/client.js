@@ -93,7 +93,7 @@ $(document).on('click',".favorites", function(key) {
      if(!$(this).hasClass('visited'))
     {
         $(this).addClass('visited');
-        addFavoriteRecipe($(this).parents('li').find('.linking').attr('href'));
+        addFavoriteProduct($(this).parents('li').find('.linking').attr('href'));
           return true;
 }
 else
