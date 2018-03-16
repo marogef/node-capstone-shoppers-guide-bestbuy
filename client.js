@@ -62,7 +62,7 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     output += '<img src="' + product.image + '">';
-    output += '<a href="' + product.url + '" class="linking">Visit product</a>';
+    output += '<p><a target="_blank"  class ="linking" href=https://www.bestbuy.com/' + product.id + ' >' + product.productName + '</a></p>';
 
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
@@ -104,6 +104,7 @@ $(document).on('click',".favorites", function(key) {
       
         addFavoriteProduct($(this).parents('li').find('.linking').attr('href'));
 
+        // addFavoriteProduct(favoriteProductName);
           return true;
 }
 else
@@ -181,6 +182,8 @@ function resultsIntoListItem(output, product) {
     output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
     output += '</div>';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
+                 output += '<a href="' + product.url + '" class="linking">Visit product</a>';
+
     if (product.image != null) {
         output += '<img src="' + product.image + '">';
     }
@@ -207,6 +210,7 @@ function resultsIntoListItem(output, product) {
     output += '</div>';
     if (isSale == false) {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
+
 
     }
     else {
