@@ -211,7 +211,7 @@ function resultsIntoListItem(output, product) {
     }
     output += '</div>';
     if (isSale == false) {
-        output += '<a href="' +      '" class="favorites">Add to favorites</a>';
+        output += '<a href="' + product.url +      '" class="add-favorites">Add to favorites</a>';
 
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
 
