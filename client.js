@@ -66,6 +66,7 @@ function resultsIntoListItem(output, product) {
 
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
+        
         output += '<p class="review-num">' + product.customerReviewCount + ' Reviews</p>';
     }
     if (product.customerReviewAverage != null) {
@@ -83,9 +84,11 @@ function resultsIntoListItem(output, product) {
     }
     output += '</div>';
     if (isSale == false) {
+        output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
     }
     else {
+       output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart sale-button">Add to Cart</a>';
     }
     output += '</div>';
