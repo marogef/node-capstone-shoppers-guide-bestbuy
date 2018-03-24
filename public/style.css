@@ -254,7 +254,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 87%;
-    margin-top: 5rem;
+/*    margin-top: 5rem;*/
 }
 
 
@@ -527,11 +527,30 @@ border: 8px solid green;
     /*margin-top: 230px;*/
     /*margin-right: 450px;*/
 }
+.banner .favorite ul { 
+    border: 8px solid green;
+    color: white;
+/*    margin-right: 50px;*/
+    background-color: white;
+     float: left; 
+    width: 195px;
+    margin-top: 10px;
+    margin-bottom: 58px;
+    text-align: center;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 196px;
+    padding: 0px 4px 4px 4px;
+    color: salmon;
+    
+    
+}
 
 footer .inside-footer {
     height: 5px;
     background-color: orange;
-    margin-top: 5px;
+    margin-top: 500px;
 }
 
 
