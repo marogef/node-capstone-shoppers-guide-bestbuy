@@ -75,13 +75,9 @@ function resultsIntoListItem(output, product) {
     }
     output += '</div>';
     if (isSale == false) {
-             output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
-
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
     }
     else {
-            output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
-
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart sale-button">Add to Cart</a>';
     }
     output += '</div>';
@@ -179,12 +175,11 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="add-product-to-favorites">';
     output += '<input type="hidden" value="' + sanitizeJSON(product.name) + '">';
-//    output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
+    output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
     output += '</div>';
 
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
-    
-     output += '<a href="' + product.url + '" class="linking">Visit product</a>';
+                     output += '<a href="' + product.url + '" class="linking">Visit product</a>';
 
     if (product.image != null) {
         output += '<img src="' + product.image + '">';
@@ -211,8 +206,6 @@ function resultsIntoListItem(output, product) {
     }
     output += '</div>';
     if (isSale == false) {
-        output += '<a href="' +    '" class="add-favorites">Add to favorites</a>';
-
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart">Add to Cart</a>';
 
     }
