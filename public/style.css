@@ -100,17 +100,18 @@ h3 {
     /*background-position: 1px -100px; */
 }
 
-.banner h1, .favorite h1 {
-     padding-top: 50px;
-   padding-bottom: 20px;
+.banner h1{
+    padding-top: 50px;
+    padding-bottom: 20px;
     color: white;
     font-size: 14px;
     display: block;
     width: 90%;
     margin-left: auto;
-   margin-right: auto;
+    margin-right: auto;
     width: 400px;
 }
+
 
 .banner .favorites-container {
 /*
@@ -158,17 +159,18 @@ h3 {
 }
 
 .banner .favorites-container .delete-favorites button {
-     padding:0; 
-     border: 0; 
-     margin: 0;
-     width: 14px;
-     height: 14px;
+    padding: 0; */
+    /* margin: 0; */
+    width: 64px;
+    height: 42px;
+    background-color: lightblue;
 }
 .banner .favorites-container .delete-favorites img{
-    max-width: 100%;
-    height: auto;
-     padding:0; 
-     margin: 0; 
+/*max-width: 100%; */*/
+    padding: 0;
+    margin: 0;
+    width: 61px;
+    height: 40px;
 }
 
 .banner img{
