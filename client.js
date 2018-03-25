@@ -187,7 +187,7 @@ function resultsIntoListItem(output, product) {
     output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
     output += '</div>';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
-                 output += '<a href="' + product.url + '" class="linking">Visit product</a>';
+                 output += '<a href="' + product.url  '" class="linking">Visit product</a>';
 
     if (product.image != null) {
         output += '<img src="' + product.image + '">';
