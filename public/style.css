@@ -688,3 +688,22 @@ footer .inside-footer-favorites {
     }
 
 }
+@media only screen and (max-width: 830px){
+
+    .main-content{
+        width: 80%;
+        height: 1104px;
+
+    }
+    .mid-content{
+        width: 99%;
+
+    }
+    .intro-content{
+        width: 99%;
+        margin-bottom: 5px;
+    }
+    .intro-content img{
+        width: 100%;
+    }
+}
