@@ -667,7 +667,7 @@ footer .inside-footer-favorites {
         width: 68%;
     }
     .banner .favorites-container{
-        width: 80%;
+        width: 100%;
     }
 
     .main-content{
@@ -711,4 +711,17 @@ width: 75%;
 {
   width: 75%;  
 }
+}
+@media only screen and (max-width: 380px){
+
+        .banner{
+        width: 100%;
+    }
+    .banner .image-title img{
+        width: 58%;
+    }
+        .main-content{
+                height: 1050px;
+
+    }
 }
