@@ -513,7 +513,7 @@ color: white;
 }
 .mid-content {
     background-color: #1153B1;
-    font-size: 24px;
+    font-size: 22px;
     background-size: cover;
     border-radius: 8px;
     border-style: dotted;
@@ -616,17 +616,59 @@ footer .inside-footer-favorites {
 
 /*reposnsive */
 
-@media only screen and (max-width: 800px) {
-    .banner,
-    .content,
-    .search-results,
-    footer,
-    .mid-content {
-        width: 100%;
-        border-top: none;
+@media only screen and (max-width: 1070px) {
+
+    .banner {
+        width: 90%;
     }
-    .content .results li {
-        width: 100%;
-        display: block;
+    .main-content{
+        width: 80%;
+                height: 804px;
+
     }
+
+    .mid-content{
+        width: 55%;
+
+    }
+    .intro-content{
+        width: 40%;
+    }
+    .intro-content img{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 830px){
+
+    .main-content{
+        width: 80%;
+        height: 1004px;
+
+    }
+    .mid-content{
+        width: 99%;
+
+    }
+    .intro-content{
+        width: 99%;
+        margin-bottom: 5px;
+    }
+    .intro-content img{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 623px){
+    .banner{
+        width: 90%;
+    }
+    .banner .image-title img {
+        width: 70%;
+    }
+        .mid-content{
+        width: 99%;
+        padding: 10px 10px 10px 10px;
+
+    }
+
 }
