@@ -306,6 +306,7 @@ h3 {
     -moz-box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
     box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
 }
+/*
 
 .content .results .product-container .add-product-to-favorites {
     position: absolute;
@@ -315,6 +316,7 @@ h3 {
     margin-left: 156px;
     width: 284px;
 }
+*/
 
 .content .results .product-container .add-product-to-favorites button{
      padding:0; 
@@ -424,9 +426,9 @@ border: 8px solid green;
     box-shadow: 0px 2px 2px 0px rgba(38, 38, 38, 0.5);
 }
 .content .add-product-to-favorites{
-        display: block;
+    display: block;
     text-align: center;
-    width: 50%;
+    width: 24%;
     padding: 0.5rem;
     margin-top: 0.5rem;
     margin-left: auto;
