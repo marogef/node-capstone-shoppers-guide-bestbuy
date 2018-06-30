@@ -99,7 +99,6 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 980px;
-    height: 102px;
     border-radius: 5px;
     border:5px solid deepskyblue;
     text-align: center;
@@ -120,8 +119,7 @@ h3 {
     width: 400px;
 }
 .banner .image-title img{
-    width: 551px;
-    height: 93px;
+    width: 100%;
     margin-left: auto;
     display: block;
     margin-right: auto;
@@ -176,14 +174,14 @@ h3 {
 }
 
 .banner .favorites-container .delete-favorites button {
-    padding: 0; */
+    padding: 0; 
     /* margin: 0; */
     width: 52px;
     height: 31px;
     background-color: lightblue;
 }
 .banner .favorites-container .delete-favorites img{
-/*max-width: 100%; */*/
+/*max-width: 100%; */
     padding: 0;
     margin: 0;
     width: 44px;
@@ -197,10 +195,7 @@ h3 {
     height: 29px;
 }
 
-.banner img{
-      width: 77px;
-    height: 33px;
-}
+
 
 /*content styles*/
 .side-menu {
@@ -566,7 +561,7 @@ border: 8px solid green;
     float: right;
 /*    width: 25%;*/
 }
-}
+
 .mid-content p {
     color: #DDFFE6;
     /*text-align: center;*/
