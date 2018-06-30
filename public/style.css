@@ -88,8 +88,8 @@ h3 {
 .favorites-link img{
     padding: 0;
     margin: 0;
-    width: 44px;
-    height: 29px;
+    width: 44px;
+    height: 29px;
 }
 .banner {
     background: linear-gradient(lightblue, transparent 10%), url(images/blue-e.jpg) no-repeat center;
@@ -99,27 +99,30 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     width: 980px;
+    /*height: 102px;*/
     border-radius: 5px;
     border:5px solid deepskyblue;
-    text-align: center;
-    margin-top: 15px;
-    padding-top: 25px;
+    text-align: center;
+    margin-top: 15px;
+    /*padding-top: 25px;*/
     color: white;
+    background-color:  #4db8ff;
 }
 
 .banner h1{
-    padding-top: 50px;
-    padding-bottom: 20px;
-    color: white;
-    font-size: 14px;
-    display: block;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 14px;
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
 }
 .banner .image-title img{
-    width: 100%;
+    width: 551px;
+    height: 93px;
     margin-left: auto;
     display: block;
     margin-right: auto;
@@ -151,9 +154,9 @@ h3 {
     margin-right: auto;
     width: 582px;
     border: 5px solid green;
-    padding: 0;
-    height: 57px;
-    background-color: lightblue;
+    padding: 0;
+    height: 57px;
+    background-color: lightblue;
 }
 
 .banner .favorites-container ul {
@@ -174,28 +177,31 @@ h3 {
 }
 
 .banner .favorites-container .delete-favorites button {
-    padding: 0; 
+    padding: 0; */
     /* margin: 0; */
     width: 52px;
     height: 31px;
     background-color: lightblue;
 }
 .banner .favorites-container .delete-favorites img{
-/*max-width: 100%; */
+/*max-width: 100%; */*/
     padding: 0;
     margin: 0;
-    width: 44px;
-    height: 29px;
+    width: 44px;
+    height: 29px;
 }
 
 .intro-img{
    padding: 0;
     margin: 0;
-    width: 44px;
-    height: 29px;
+    width: 44px;
+    height: 29px;
 }
 
-
+.banner img{
+      width: 77px;
+    height: 33px;
+}
 
 /*content styles*/
 .side-menu {
@@ -302,7 +308,6 @@ h3 {
     box-shadow: 0px 7px 6px -5px rgba(38, 38, 38, 0.5);
 }
 /*
-
 .content .results .product-container .add-product-to-favorites {
     position: absolute;
     top: 0;
@@ -561,7 +566,7 @@ border: 8px solid green;
     float: right;
 /*    width: 25%;*/
 }
-
+}
 .mid-content p {
     color: #DDFFE6;
     /*text-align: center;*/
@@ -634,7 +639,7 @@ footer .inside-footer-favorites {
 @media only screen and (max-width: 1070px) {
 
     .banner {
-        width: 90%;
+        width: 80%;
     }
     .main-content{
         width: 80%;
@@ -647,7 +652,7 @@ footer .inside-footer-favorites {
 
     }
     .intro-content{
-        width: 40%;
+        width: 42%;
     }
     .intro-content img{
         width: 80%;
@@ -656,7 +661,7 @@ footer .inside-footer-favorites {
 
 @media only screen and (max-width: 830px){
       .banner {
-        width: 90%;
+        width: 80%;
     }
     .banner .image-title img{
         width: 68%;
@@ -685,7 +690,7 @@ footer .inside-footer-favorites {
 
 @media only screen and (max-width: 623px){
     .banner{
-        width: 90%;
+        width: 80%;
     }
     .banner .image-title img {
         width: 70%;
