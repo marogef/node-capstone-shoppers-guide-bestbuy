@@ -54,8 +54,6 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
     output += '<img src="' + product.image + '">';
-    output += '<p><a target="_blank"  class ="linking" href=https://www.bestbuy.com/' + product.id + ' >' + product.productName + '</a></p>';
-
     output += '<div class = "product-details">';
     if (product.customerReviewCount != null) {
         output += '<p class="review-num">' + product.customerReviewCount + ' Reviews</p>';
@@ -84,21 +82,10 @@ function resultsIntoListItem(output, product) {
     output += '</li>';
     return output;
 }
-
-//clicking the favorites to add the products 
-$(document).on('click',".favorites", function(key) {
-    
-     if(!$(this).hasClass('visited'))
-    {
-        $(this).addClass('visited');
-        addFavoriteProduct($(this).parents('li').find('.linking').attr('href'));
-          return true;
-}
-else
-    {
-        return false;
-    }
-
+//clicking the favorites to add the product 
+$(document).on('click', ".favorites", function(key) {
+    var favoriteProductName = $(this).closest('.add-product-to-favorites').find('input').val();
+    addFavoriteProduct(favoriteProductName);
 });
 
 //clicking the favorites to delete the favorites 
@@ -154,9 +141,7 @@ function getFavoriteProducts() {
             var buildTheHtmlOutput = "";
 
             $.each(products, function(productsKey, productsValue) {
-//                buildTheHtmlOutput += '<li><a href=product.url' + ' >' + productsValue.name + '</a></li>';
-                buildTheHtmlOutput += '<li><a href=' + productsValue.name + ' >' + productsValue.name + '</a></li>';
-
+                buildTheHtmlOutput += "<li>" + productsValue.name + "</li>";
             });
 
             //use the HTML output to show it in the index.html
@@ -175,14 +160,9 @@ function resultsIntoListItem(output, product) {
     output += '<div class="product-container">';
     output += '<div class="add-product-to-favorites">';
     output += '<input type="hidden" value="' + sanitizeJSON(product.name) + '">';
-    // output += '<li class="favorites"><img src="images/add-to-favorites.png"></li>';
-      output += '<a href="' + product.url + '" class="favorites" onClick="return false;">Add to Favorites</a>';
-
+    output += '<button class="favorites"><img src="images/add-to-favorites.png"></button>';
     output += '</div>';
-
     output += '<div class="title-wrapper"><h3 class="clamp-this">' + sanitizeJSON(product.name) + '</h3></div>';
-                     output += '<a href="' + product.url + '" class="linking">Visit product</a>';
-
     if (product.image != null) {
         output += '<img src="' + product.image + '">';
     }
@@ -213,7 +193,6 @@ function resultsIntoListItem(output, product) {
     }
     else {
         output += '<a href="' + product.addToCartUrl + '" class="add-to-cart sale-button">Add to Cart</a>';
-
 
     }
     output += '</div>';
