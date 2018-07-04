@@ -86,14 +86,14 @@ h3 {
 }
 
 .banner h1 {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 20px;
     color: white;
-    font-size: 14px;
+    font-size: 20px;
     display: block;
     width: 80%;
     margin: 0 auto;
-    color: #115391;
+    color: #fff;
 }
 
 .banner .favorites-container {
